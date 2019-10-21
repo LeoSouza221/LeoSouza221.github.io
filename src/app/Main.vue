@@ -3,6 +3,7 @@
     v-img(
       src="@/../public/images/FundoTela.png"
       height="100%"
+      gradient=""
     )
       v-layout(justify-center align-center fill-height)
         v-card(width="90%" height="50%")
