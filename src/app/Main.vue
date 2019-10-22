@@ -1,21 +1,35 @@
 <template lang="pug">
   .main-page
-    v-img(
-      src="@/../public/images/FundoTela.png"
-      height="100%"
-      gradient=""
+    v-navigation-drawer(
+      app
+      fixed
+      dark
+      permanent
+      style="background: linear-gradient(120deg, #00E676, #B9F6CA)"
     )
-      v-layout(justify-center align-center fill-height)
-        v-card(width="90%" height="50%")
-          span testes
+    v-content
+      v-container.teste
+        v-layout(justify-center align-center fill-height)
+          v-card(width="90%" height="90%")
+            span teste
+        v-slide-y-transition(mode="out-in")
+          router-view
+            
 </template>
+
+<script>
+export default {
+  data: () => ({
+  }),
+}
+</script>
 
 <style>
   .main-page {
-    width: 100vw;
-    height: 100vh;
+    
   }
   .teste {
-    background: rgb(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100vh;
   }
 </style>
