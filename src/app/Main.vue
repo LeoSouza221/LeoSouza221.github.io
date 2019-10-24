@@ -10,7 +10,7 @@
     v-content
       header.default-header.default-header-main
         div.avatar
-      v-container.teste
+      v-container
         v-card.elevation-1.ma-5
           v-card-title Apresentacao
         v-card.elevation-1.ma-5
@@ -29,7 +29,7 @@ export default {
 <style>
   .default-header {
     width: 100%;
-    height: 17%;
+    height: 150px;
     position: relative;
     box-shadow: 0 2px 10px grey;
     margin-bottom: 50px;
@@ -39,12 +39,12 @@ export default {
    }
    .avatar {
       position: absolute;
-      bottom: -30%;
+      bottom: -35%;
       height: 130px;
       width: 130px;
       margin: auto;
       left: 50%;
-      transform: translateX(-25%);
+      transform: translateX(-50%);
       border-radius: 50%;
       border: solid 5px #00E676;
       background: #ffffff;
@@ -52,6 +52,6 @@ export default {
    }
   .teste {
     width: 100%;
-    height: 100vh;
+    height: 100%;
   }
 </style>
