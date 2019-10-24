@@ -8,13 +8,15 @@
       style="background: linear-gradient(120deg, #00E676, #B9F6CA)"
     )
     v-content
+      header.default-header.default-header-main
+        div.avatar
       v-container.teste
-        v-layout(justify-center align-center fill-height)
-          v-card(width="90%" height="90%")
-            span teste
+        v-card.elevation-1.ma-5
+          v-card-title Apresentacao
+        v-card.elevation-1.ma-5
+          v-card-title Contatos  
         v-slide-y-transition(mode="out-in")
           router-view
-            
 </template>
 
 <script>
@@ -25,9 +27,29 @@ export default {
 </script>
 
 <style>
-  .main-page {
-    
+  .default-header {
+    width: 100%;
+    height: 17%;
+    position: relative;
+    box-shadow: 0 2px 10px grey;
+    margin-bottom: 50px;
   }
+   .default-header-main {
+     background: linear-gradient(120deg, #00E676, #B9F6CA)
+   }
+   .avatar {
+      position: absolute;
+      bottom: -30%;
+      height: 130px;
+      width: 130px;
+      margin: auto;
+      left: 50%;
+      transform: translateX(-25%);
+      border-radius: 50%;
+      border: solid 5px #00E676;
+      background: #ffffff;
+      box-shadow: 5px 5px 5px grey;
+   }
   .teste {
     width: 100%;
     height: 100vh;
