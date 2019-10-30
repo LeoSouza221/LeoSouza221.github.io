@@ -5,16 +5,42 @@
       fixed
       dark
       permanent
-      style="background: linear-gradient(120deg, #00E676, #B9F6CA)"
+      style="background: linear-gradient(120deg, #00E676, #B9F6CA); box-shadow: 0px 15px 5px grey;"
     )
     v-content
       header.default-header.default-header-main
         div.avatar
-      v-container
-        v-card.elevation-1.ma-5
-          v-card-title Apresentacao
-        v-card.elevation-1.ma-5
-          v-card-title Contatos  
+      v-container(style="height: 100%;")
+        v-layout(justify-center row wrap align-center fill-height)
+          v-flex(xs12 sm4)
+            v-card.elevation-1.ma-5
+              v-img(
+                class="white--text"
+                gradient="to bottom, rgba(0,0,0,.8), rgba(0,0,0,.5)"
+                src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+                max-height="250px"
+              )
+                v-card-title Apresentacao
+                v-card-subtitle.white--text Olá, me chamo Leonardo, sou formado em Análise e Desenvolvimento de Sistemas desde o comeco de 2019. Ja fui estagiario de BI por cerca de um ano e meio, onde era responsvel por criar os dashboards e aplicar as metricas pre definidas
+                v-card-subtitle.white--text Atualmente trabalho como desenvolvedor front-end, utilizando VueJS com Vuetify e buscando sempre novos conhecimentos e aprender coisas novas.
+          v-flex(xs12 sm3)
+            v-card.elevation-1.ma-5
+              v-img(
+                class="white--text"
+                gradient="to bottom, rgba(0,0,0,.8), rgba(0,0,0,.5)"
+                src="https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+                max-height="250px"
+              )
+                v-card-title Conhecimentos
+          v-flex(xs12 sm7)
+            v-card.elevation-1.ma-5
+              v-img(
+                class="white--text"
+                gradient="to bottom, rgba(0,0,0,.8), rgba(0,0,0,.5)"
+                src="https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80"
+                max-height="100px"
+              )
+                v-card-title Contatos e Referencias
         v-slide-y-transition(mode="out-in")
           router-view
 </template>
@@ -50,8 +76,12 @@ export default {
       background: #ffffff;
       box-shadow: 5px 5px 5px grey;
    }
-  .teste {
-    width: 100%;
-    height: 100%;
-  }
+   .main-page {
+     height: 100vh;
+     width: 100vw;
+     background: #00E676;
+   }
+   .borda {
+     border: solid 5px #00E676;
+   }
 </style>
