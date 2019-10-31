@@ -13,11 +13,11 @@
                 src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
                 height="250px"
               )
-                v-card-title Apresentacao
+                v-card-title Apresentação
                 v-card-subtitle.white--text Olá, me chamo Leonardo, sou formado em Análise e Desenvolvimento de Sistemas desde o comeco de 2019. Ja fui estagiario de BI por cerca de um ano e meio, onde era responsvel por criar os dashboards e aplicar as metricas pre definidas
                 v-card-subtitle.white--text Atualmente trabalho como desenvolvedor front-end, utilizando VueJS com Vuetify e buscando sempre novos conhecimentos e aprender coisas novas.
           v-flex(xs12 sm4)
-            v-card.elevation-1.m-3
+            v-card.elevation-1.mx-3
               v-img(
                 class="white--text"
                 gradient="to bottom, rgba(0,0,0,.8), rgba(0,0,0,.5)"
