@@ -1,6 +1,6 @@
 <template lang="pug">
   .main-page
-    v-content
+    v-content(style="height: 100%;")
       toolbar
       main-content
       v-container
@@ -62,19 +62,24 @@ export default {
    .my-grid {
      display: grid;
      padding: 10px;
-     width: 100%;
-     height: 60%;
+     height: 80%;
    }
    .my-grid-knowledge {
+     width: 100%;
      grid-template-columns: repeat(3, 1fr);
-     grid-template-rows: repeat(2, 1fr);
+     grid-template-rows: repeat(2, 0.42fr);
+     grid-row-gap: 20px;
+     grid-column-gap: 20%;
    }
    .my-grid-contacts {
-     grid-template-columns: repeat(2, 1fr);
+     width: 30%;
+     grid-template-columns: repeat(2, 0.5fr);
+     grid-template-rows: 0.5fr;
    }
    .my-grid-item {
      display: flex;
      justify-content: center;
      align-items: center;
+     border-radius: 20px;
    }
 </style>

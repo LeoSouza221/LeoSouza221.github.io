@@ -20,7 +20,7 @@
           style="background: linear-gradient(120deg, #00E676, #B9F6CA)"
         )
           v-list-item-group(
-            color="primary"
+            color="secondary"
           )
             v-list-item(
               :to="item.children[0].path"
