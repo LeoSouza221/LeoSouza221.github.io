@@ -11,12 +11,12 @@ export default [
     children: [
       {
         path: '/layout/advogado',
-        name: 'Layout Advogado',
+        name: 'Advocacia',
         component: () => import('./LayoutAdvogado.vue'),
         meta: {
           sidebar: {
-            icon: 'fa fa-balance-scale-right',
-            title: 'Layout Advogado',
+            icon: 'fa fa-balance-scale',
+            title: 'Advocacia',
           },
         },
       },

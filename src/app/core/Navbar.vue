@@ -1,33 +1,45 @@
 <template lang="pug">
   .sidebar
     template(v-for="(item, index) in sideBarRoutes")
-      v-menu.transparent(open-on-hover bottom left)
+      v-menu.mx-3(open-on-hover offset-y transition="slide-y-transition")
         template(v-slot:activator="{ on }")
-          v-btn(
+          v-btn.transparent(
             v-on="on"
             small
+            depressed
+            rounded
+            dark
+            large
           )
             v-icon(medium left) {{ item.icon }}
             span {{ item.title }}
-        v-list(rounded dense)
-          v-list-item(
-            :to="item.children[0].path"
-            v-if="item.children && item.children[0].meta"
+        v-list(
+          rounded
+          dense
+          dark
+          style="background: linear-gradient(120deg, #00E676, #B9F6CA)"
+        )
+          v-list-item-group(
+            color="primary"
           )
-            v-list-item-action
-              v-icon {{ item.children[0].meta.sidebar.icon }}
-            v-list-item-content
-              v-list-item-title {{ item.children[0].meta.sidebar.title }}
-          v-list-tile(
-            v-else
-            ripple
-            :key="index"
-            :to="item.path"
-          )
-            v-list-item-icon
-              v-icon(v-html="item.icon")
-            v-list-item-content
-              v-list-item-title(v-text="item.title")
+            v-list-item(
+              :to="item.children[0].path"
+              v-if="item.children && item.children[0].meta"
+            )
+              v-list-item-action
+                v-icon {{ item.children[0].meta.sidebar.icon }}
+              v-list-item-content
+                v-list-item-title {{ item.children[0].meta.sidebar.title }}
+            v-list-tile(
+              v-else
+              ripple
+              :key="index"
+              :to="item.path"
+            )
+              v-list-item-icon
+                v-icon(v-html="item.icon")
+              v-list-item-content
+                v-list-item-title(v-text="item.title")
 </template>
 
 <script>
@@ -61,6 +73,6 @@ export default {
       this.drawer = !this.drawer;
     },
   },
-  name: 'Sidebar',
+  name: 'Navbar',
 };
 </script>
