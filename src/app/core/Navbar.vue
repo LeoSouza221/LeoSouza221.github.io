@@ -1,6 +1,6 @@
 <template lang="pug">
   .sidebar
-    template(v-for="(item, index) in sideBarRoutes")
+    template(v-for="(item, index) in sideBarRoutes" v-if="$vuetify.breakpoint.width > 450")
       v-menu.mx-3(open-on-hover offset-y transition="slide-y-transition")
         template(v-slot:activator="{ on }")
           v-btn.transparent(
@@ -40,6 +40,18 @@
                 v-icon(v-html="item.icon")
               v-list-item-content
                 v-list-item-title(v-text="item.title")
+    v-btn(
+      v-else
+      icon
+      @click="drawer != drawer"
+    )
+      v-icon close
+    //- v-navigation-drawer(
+    //-   v-model="drawer"
+    //-   absolute
+    //-   temporary
+    //- ) 
+    //-   span teste
 </template>
 
 <script>

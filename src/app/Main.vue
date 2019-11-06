@@ -30,6 +30,7 @@ export default {
     position: relative;
     box-shadow: 0 2px 10px grey;
     margin-bottom: 50px;
+    transition: height .5s ease-in;
   }
    .default-header-main {
      background: linear-gradient(120deg, #00E676, #B9F6CA)
@@ -46,6 +47,7 @@ export default {
       border: solid 5px #00E676;
       background: #ffffff;
       box-shadow: 5px 5px 5px grey;
+      transition: all .5s ease-in;
    }
    .align-navbar {
       width: 90%;
@@ -82,4 +84,17 @@ export default {
      align-items: center;
      border-radius: 20px;
    }
+  @media only screen and (max-width: 600px) {
+    .my-grid-contacts {
+      width: 100%;
+    }
+    .avatar {
+      height: 80px;
+      width: 80px;
+      bottom: -38%;
+    }
+    .default-header {
+      height: 100px;
+    }
+  }
 </style>
