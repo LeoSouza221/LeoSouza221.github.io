@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-app.app(style="background: #b3d4fc; width: 100%; height: 100%;")
+  v-app
     v-fade-transition(mode="out-in")
       router-view
     //- v-dialog(v-model="dialog" persistent max-width="200")
