@@ -1,9 +1,10 @@
 <template lang="pug">
   .main-page
-    v-content(style="height: 100%;")
-      toolbar
+    sidebar
+    toolbar
+    v-content
       main-content
-      v-container
+      v-container(class="fluid")
         v-slide-y-transition(mode="out-in")
           router-view
 </template>
@@ -11,28 +12,20 @@
 <script>
 import MainContent from './core/MainContent.vue';
 import Toolbar from './core/Toolbar.vue';
+import Sidebar from './core/Sidebar.vue';
 
 export default {
   components: {
     MainContent,
     Toolbar,
+    Sidebar,
   },
-  data: () => ({
-  }),
   name: 'Main',
 }
 </script>
 
 <style>
-  .default-header {
-    width: 100%;
-    height: 150px;
-    position: relative;
-    box-shadow: 0 2px 10px grey;
-    margin-bottom: 50px;
-    transition: height .5s ease-in;
-  }
-   .default-header-main {
+   .default-background {
      background: linear-gradient(120deg, #00E676, #B9F6CA)
    }
    .avatar {
@@ -46,7 +39,7 @@ export default {
       border-radius: 50%;
       border: solid 5px #00E676;
       background: #ffffff;
-      box-shadow: 5px 5px 5px grey;
+      box-shadow: 2px 2px 5px black;
       transition: all .5s ease-in;
    }
    .align-navbar {
@@ -93,8 +86,8 @@ export default {
       width: 80px;
       bottom: -38%;
     }
-    .default-header {
-      height: 100px;
+    .align-navbar {
+      margin-left: 10px;
     }
   }
 </style>

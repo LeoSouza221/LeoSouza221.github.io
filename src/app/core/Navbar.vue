@@ -1,73 +1,62 @@
 <template lang="pug">
   .sidebar
-    template(v-for="(item, index) in sideBarRoutes" v-if="$vuetify.breakpoint.width > 450")
-      v-menu.mx-3(open-on-hover offset-y transition="slide-y-transition")
-        template(v-slot:activator="{ on }")
-          v-btn.transparent(
-            v-on="on"
-            small
-            depressed
+    transition()
+      template(v-for="(item, index) in sideBarRoutes" v-if="verifyMobile()")
+        v-menu.mx-3(open-on-hover offset-y transition="slide-y-transition")
+          template(v-slot:activator="{ on }")
+            v-btn.transparent(
+              v-on="on"
+              small
+              depressed
+              rounded
+              dark
+              large
+            )
+              v-icon(medium left) {{ item.icon }}
+              span {{ item.title }}
+          v-list(
             rounded
+            dense
             dark
-            large
+            style="background: linear-gradient(120deg, #00E676, #B9F6CA)"
           )
-            v-icon(medium left) {{ item.icon }}
-            span {{ item.title }}
-        v-list(
-          rounded
-          dense
-          dark
-          style="background: linear-gradient(120deg, #00E676, #B9F6CA)"
-        )
-          v-list-item-group(
-            color="secondary"
-          )
-            v-list-item(
-              :to="item.children[0].path"
-              v-if="item.children && item.children[0].meta"
+            v-list-item-group(
+              color="secondary"
             )
-              v-list-item-action
-                v-icon {{ item.children[0].meta.sidebar.icon }}
-              v-list-item-content
-                v-list-item-title {{ item.children[0].meta.sidebar.title }}
-            v-list-tile(
-              v-else
-              ripple
-              :key="index"
-              :to="item.path"
-            )
-              v-list-item-icon
-                v-icon(v-html="item.icon")
-              v-list-item-content
-                v-list-item-title(v-text="item.title")
-    v-btn(
-      v-else
-      icon
-      @click="drawer != drawer"
-    )
-      v-icon close
-    //- v-navigation-drawer(
-    //-   v-model="drawer"
-    //-   absolute
-    //-   temporary
-    //- ) 
-    //-   span teste
+              v-list-item(
+                :to="item.children[0].path"
+                v-if="item.children && item.children[0].meta"
+              )
+                v-list-item-action
+                  v-icon {{ item.children[0].meta.sidebar.icon }}
+                v-list-item-content
+                  v-list-item-title {{ item.children[0].meta.sidebar.title }}
+              v-list-tile(
+                v-else
+                ripple
+                :key="index"
+                :to="item.path"
+              )
+                v-list-item-icon
+                  v-icon(v-html="item.icon")
+                v-list-item-content
+                  v-list-item-title(v-text="item.title")
+      v-btn(
+        v-else
+        icon
+        dark
+        @click="openSide"
+      )
+        v-icon fa fa-bars   
 </template>
 
 <script>
 import { EventBus } from '@/app/core/event-bus';
+import isMobile from '@/mixins/isMobile';
 import routes from '../../router/routes';
 
 export default {
-  data: () => ({
-    drawer: true,
-  }),
-  created() {
-    EventBus.$on('ativar-sidebar', this.enable);
-  },
-  beforeDestroy() {
-    EventBus.$off('ativar-sidebar');
-  },
+  mixins: [isMobile],
   computed: {
     sideBarRoutes() {
       return routes
@@ -81,9 +70,9 @@ export default {
     },
   },
   methods: {
-    enable() {
-      this.drawer = !this.drawer;
-    },
+    openSide() {
+      EventBus.$emit('ativar-sidebar');
+    }
   },
   name: 'Navbar',
 };

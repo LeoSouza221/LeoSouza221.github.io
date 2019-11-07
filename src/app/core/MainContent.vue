@@ -1,5 +1,5 @@
 <template lang="pug">
-  .mainContent
+  .mainContent(:class="verifyMobile() ? 'mt-5' : ''")
     v-layout(justify-center row wrap align-center fill-height)
       v-flex(xs11 sm6)
         v-card.elevation-10.ma-3.slide
@@ -7,11 +7,11 @@
             class="white--text"
             gradient="to bottom, rgba(0,0,0,.8), rgba(0,0,0,.5)"
             src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-            :max-height="$vuetify.breakpoint.width > 450 ? '280px' : '340px'"
+            :max-height="verifyMobile() ? '280px' : '340px'"
           )
             v-card-title.show-content Apresentação
             v-layout(justify-center wrap)
-              p.text-adjust.white--text.show-content Olá, me chamo Leonardo, sou formado em Análise e Desenvolvimento de Sistemas desde o comeco de 2019. Já fui estagiario de BI por cerca de um ano e meio, onde era responsável por criar os dashboards e aplicar as métricas pré definidas.
+              p.text-adjust.white--text.show-content Olá, me chamo Leonardo, sou formado em Análise e Desenvolvimento de Sistemas desde o começo de 2019. Já fui estagiário de BI por cerca de um ano e meio, onde era responsável por criar os dashboards e aplicar as métricas pré definidas.
               p.text-adjust.white--text.show-content Atualmente trabalho como desenvolvedor front-end, utilizando VueJS com Vuetify e buscando sempre novos conhecimentos e aprender coisas novas.
       v-flex(xs11 sm4)
         v-card.elevation-10.ma-3.slide
@@ -75,14 +75,17 @@
 </template>
 
 <script>
+import isMobile from '@/mixins/isMobile';
+
 export default {
-  
+  mixins: [isMobile],
+  name: 'MainContent',
 }
 </script>
 
 <style>
   .mainContent {
-    height: 70%;
+    height: 100%;
   }
   .contacts-container {
     display: flex;
