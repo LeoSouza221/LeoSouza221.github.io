@@ -1,77 +1,68 @@
 <template lang="pug">
-  .mainContent(:class="verifyMobile() ? 'mt-5' : ''")
-    v-layout(justify-center row wrap align-center fill-height)
-      v-flex(xs11 sm6)
-        v-card.elevation-10.ma-3.slide
-          v-img(
-            class="white--text"
-            gradient="to bottom, rgba(0,0,0,.8), rgba(0,0,0,.5)"
-            src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-            :max-height="verifyMobile() ? '280px' : '340px'"
+  .mainContent
+    v-container(style="height: 100%;")
+      v-layout(justify-center row wrap align-center fill-height)
+        v-flex(xs11 md12)
+          v-card.slide(
+            dark
+            flat 
+            :style=`
+              verifyMobile() ? 
+              'background: linear-gradient(140deg, #6335e2 60%, white 40%)' : 
+              'background: linear-gradient(180deg, #6335e2 0, #6335e2 58%, white 58%, white 80%, #6335e2 80%, #6335e2 100%)'
+            `
           )
-            v-card-title.show-content Apresentação
-            v-layout(justify-center wrap)
-              p.text-adjust.white--text.show-content Olá, me chamo Leonardo, sou formado em Análise e Desenvolvimento de Sistemas desde o começo de 2019. Já fui estagiário de BI por cerca de um ano e meio, onde era responsável por criar os dashboards e aplicar as métricas pré definidas.
-              p.text-adjust.white--text.show-content Atualmente trabalho como desenvolvedor front-end, utilizando VueJS com Vuetify e buscando sempre novos conhecimentos e aprender coisas novas.
-      v-flex(xs11 sm4)
-        v-card.elevation-10.ma-3.slide
-          v-img(
-            class="white--text"
-            gradient="to bottom, rgba(0,0,0,.8), rgba(0,0,0,.5)"
-            src="https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-            height="280px"
-          )
-            v-card-title.show-content Conhecimentos
-            div.my-grid.my-grid-knowledge.show-content
-              div.my-grid-item
-                img(
-                  src="@/../public/images/css.png"
-                  width="50"
-                  height="50"
-                )
-              div.my-grid-item
-                img(
-                  src="@/../public/images/html.png"
-                  width="50"
-                  height="50"
-                )
-              div.my-grid-item 
-                img(
-                  src="@/../public/images/js.png"
-                  width="50"
-                  height="50"
-                )
-              div.my-grid-item.grid-adjust
-                img(
-                  src="@/../public/images/vue.png"
-                  width="50"
-                  height="50"
-                )
-      v-flex(xs11 sm10)
-        v-card.elevation-10.ma-3.slide
-          v-img(
-            class="white--text"
-            gradient="to bottom, rgba(0,0,0,.8), rgba(0,0,0,.5)"
-            src="https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-1.2.1&auto=format&fit=crop&w=1355&q=80"
-            max-height="150px"
-          )
-            v-card-title.show-content Contatos e Referencias
-            div.contacts-container.show-content
-              div.my-grid.my-grid-contacts
-                div.my-grid-item
-                  a(href="https://github.com/LeoSouza221" target="_blank")
+            v-layout.ma-3(justify-center row wrap)
+              v-flex(xs12 md7)
+                v-card-title.show-content Apresentação
+                v-layout(justify-center wrap)
+                  p.text-adjust.white--text.show-content Olá, me chamo Leonardo, sou formado em Análise e Desenvolvimento de Sistemas desde o começo de 2019. Já fui estagiário de BI por cerca de um ano e meio, onde era responsável por criar os dashboards e aplicar as métricas pré definidas.
+                  p.text-adjust.white--text.show-content Atualmente trabalho como desenvolvedor front-end, utilizando VueJS com Vuetify e buscando sempre novos conhecimentos e aprender coisas novas. 
+              v-flex(xs12 md5)              
+                v-card-title.show-content Conhecimentos
+                div.my-grid.my-grid-knowledge.show-content
+                  div.my-grid-item
                     img(
-                      src="@/../public/images/git.png"
-                      width="60"
-                      height="60"
+                      src="@/../public/images/css.png"
+                      width="50"
+                      height="50"
                     )
-                div.my-grid-item
-                  a(href="https://www.linkedin.com/in/leonardo-de-souza-a75557156/" target="_blank")
+                  div.my-grid-item
                     img(
-                      src="@/../public/images/linkedin.png"
-                      width="60"
-                      height="60"
+                      src="@/../public/images/html.png"
+                      width="50"
+                      height="50"
                     )
+                  div.my-grid-item 
+                    img(
+                      src="@/../public/images/js.png"
+                      width="50"
+                      height="50"
+                    )
+                  div.my-grid-item.grid-adjust
+                    img(
+                      src="@/../public/images/vue.png"
+                      width="50"
+                      height="50"
+                    )
+              v-flex(xs12)
+                v-card-title.show-content Contatos e Referências
+                div.contacts-container.show-content
+                  div.my-grid.my-grid-contacts
+                    div.my-grid-item
+                      a(href="https://github.com/LeoSouza221" target="_blank")
+                        img(
+                          src="@/../public/images/git.png"
+                          width="60"
+                          height="60"
+                        )
+                    div.my-grid-item
+                      a(href="https://www.linkedin.com/in/leonardo-de-souza-a75557156/" target="_blank")
+                        img(
+                          src="@/../public/images/linkedin.png"
+                          width="60"
+                          height="60"
+                        )
 </template>
 
 <script>

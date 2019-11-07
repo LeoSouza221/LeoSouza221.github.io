@@ -18,7 +18,7 @@
             rounded
             dense
             dark
-            style="background: linear-gradient(120deg, #00E676, #B9F6CA)"
+            style="background: #6335e2;"
           )
             v-list-item-group(
               color="secondary"

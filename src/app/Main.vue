@@ -2,7 +2,7 @@
   .main-page
     sidebar
     toolbar
-    v-content
+    v-content(style="height: 100%;")
       main-content
       v-container(class="fluid")
         v-slide-y-transition(mode="out-in")
@@ -26,7 +26,7 @@ export default {
 
 <style>
    .default-background {
-     background: linear-gradient(120deg, #00E676, #B9F6CA)
+     background: linear-gradient(120deg, #6335e2, white)
    }
    .avatar {
       position: absolute;
@@ -37,7 +37,7 @@ export default {
       left: 50%;
       transform: translateX(-50%);
       border-radius: 50%;
-      border: solid 5px #00E676;
+      border: solid 5px #6335e2;
       background: #ffffff;
       box-shadow: 2px 2px 5px black;
       transition: all .5s ease-in;

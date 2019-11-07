@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-app
+  v-app.background
     v-fade-transition(mode="out-in")
       router-view
     //- v-dialog(v-model="dialog" persistent max-width="200")
@@ -18,3 +18,11 @@ export default {
   name: 'App',
 };
 </script>
+
+<style >
+  .background {
+    background: #b7b7b8;
+    width: 100%;
+    height: 100%;
+  }
+</style>
