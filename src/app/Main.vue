@@ -3,7 +3,7 @@
     sidebar
     toolbar
     v-content(style="height: 100%;")
-      main-content
+      main-content(v-if="$route.name === 'Main'")
       v-container(class="fluid")
         v-slide-y-transition(mode="out-in")
           router-view
@@ -26,7 +26,7 @@ export default {
 
 <style>
    .default-background {
-     background: linear-gradient(120deg, #6335e2, white)
+     background: #6335e2;
    }
    .avatar {
       position: absolute;
@@ -43,10 +43,11 @@ export default {
       transition: all .5s ease-in;
    }
    .align-navbar {
-      width: 90%;
+      width: 85%;
       margin-left: 10%;
+      margin-right: 5%;
       position: absolute;
-      bottom: 5px;
+      bottom: 0;
       display: flex;
       justify-content: start;
    }
@@ -87,7 +88,7 @@ export default {
       bottom: -38%;
     }
     .align-navbar {
-      margin-left: 10px;
+      margin: 0;
     }
   }
 </style>

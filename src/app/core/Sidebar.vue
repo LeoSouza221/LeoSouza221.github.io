@@ -1,6 +1,6 @@
 <template lang="pug">
   .sidebar
-    v-navigation-drawer.default-background(
+    v-navigation-drawer.secondary(
       app
       v-model="drawer"
       absolute

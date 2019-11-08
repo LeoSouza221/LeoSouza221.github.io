@@ -14,11 +14,10 @@
             )
               v-icon(medium left) {{ item.icon }}
               span {{ item.title }}
-          v-list(
+          v-list.secondary(
             rounded
             dense
             dark
-            style="background: #6335e2;"
           )
             v-list-item-group(
               color="secondary"
