@@ -4,9 +4,8 @@
     toolbar
     v-content(style="height: 100%;")
       main-content(v-if="$route.name === 'Main'")
-      v-container(class="fluid")
-        v-slide-y-transition(mode="out-in")
-          router-view
+      v-slide-y-transition(mode="out-in")
+        router-view
 </template>
 
 <script>

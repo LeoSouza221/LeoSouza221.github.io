@@ -21,7 +21,7 @@ export default {
 
 <style >
   .background {
-    background: #b7b7b8;
+    background: #9a9a9b;
     width: 100%;
     height: 100%;
   }

@@ -1,6 +1,6 @@
 <template lang="pug">
   .toolbar
-    v-app-bar.secondary(
+    v-app-bar.primary(
       prominent
       app
       fixed

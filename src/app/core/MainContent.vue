@@ -16,7 +16,7 @@
               v-flex(xs12 md7)
                 v-card-title.show-content Apresentação
                 v-layout(justify-center wrap)
-                  p.text-adjust.white--text.show-content Olá, me chamo Leonardo, sou formado em Análise e Desenvolvimento de Sistemas desde o começo de 2019. Já fui estagiário de BI por cerca de um ano e meio, onde era responsável por criar os dashboards e aplicar as métricas pré definidas.
+                  p.text-adjust.white--text.show-content &nbsp; Olá, me chamo Leonardo, sou formado em Análise e Desenvolvimento de Sistemas desde o começo de 2019. Já fui estagiário de BI por cerca de um ano e meio, onde era responsável por criar os dashboards e aplicar as métricas pré definidas.
                   p.text-adjust.white--text.show-content Atualmente trabalho como desenvolvedor front-end, utilizando VueJS com Vuetify e buscando sempre novos conhecimentos e aprender coisas novas. 
               v-flex(xs12 md5)              
                 v-card-title.show-content Conhecimentos

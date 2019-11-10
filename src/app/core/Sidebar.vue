@@ -1,6 +1,6 @@
 <template lang="pug">
   .sidebar
-    v-navigation-drawer.secondary(
+    v-navigation-drawer.primary(
       app
       v-model="drawer"
       absolute

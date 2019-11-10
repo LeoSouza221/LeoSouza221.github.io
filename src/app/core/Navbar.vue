@@ -1,6 +1,6 @@
 <template lang="pug">
   .sidebar
-    transition()
+    transition(name="fade")
       template(v-for="(item, index) in sideBarRoutes" v-if="verifyMobile()")
         v-menu.mx-3(open-on-hover offset-y transition="slide-y-transition")
           template(v-slot:activator="{ on }")
@@ -14,7 +14,7 @@
             )
               v-icon(medium left) {{ item.icon }}
               span {{ item.title }}
-          v-list.secondary(
+          v-list.primary(
             rounded
             dense
             dark
@@ -76,3 +76,12 @@ export default {
   name: 'Navbar',
 };
 </script>
+
+<style>
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+  }
+</style>
