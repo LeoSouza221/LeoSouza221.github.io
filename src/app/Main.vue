@@ -2,7 +2,7 @@
   .main-page
     sidebar
     toolbar
-    v-content(style="height: 100%;")
+    v-content(style="height: 100%; width: 100%")
       main-content(v-if="$route.name === 'Main'")
       v-slide-y-transition(mode="out-in")
         router-view

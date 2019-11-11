@@ -5,20 +5,21 @@
 			dark
 			fixed
 			:style=`{
-				backgroundColor: color,
 				backgroundImage: image,
-				backgroundBlendMode: 'hue',
+				backgroundColor: color,
+				backgroundBlendMode: 'multiply',
 				backgroundSize: 'cover',
 				backgroundPosition: 'center',
 			}`
+			:flat="flat"
 		)
 			slot(name="item-left")
-			slot(name="item-center")
+			slot(name="menu")
 </template>
 
 <script>
 export default {
-	props: ['height', 'color', 'image'],
+	props: ['height', 'color', 'image', 'flat'],
 	name: 'DefaulHeader',
 }
 </script>
