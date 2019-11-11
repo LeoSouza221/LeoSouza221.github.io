@@ -6,20 +6,31 @@
           v-card(flat height="400")
             slot(name="text-container")
     v-divider.mb-5
-    .extra-content
+    .extra-content(
+      :style=`{
+        backgroundImage: image,
+        backgroundColor: color,
+        backgroundBlendMode: 'multiply',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }`
+    )
       v-layout(justify-center align-center fill-height)
-        v-flex(xs11)
-          v-card.primary(flat height="100%")
-            slot(name="extra-content")
-    slot(name="carrousel-conteiner")
+        slot(name="extra-content")
+    .carousel-container
+      slot(name="carousel-container")
+        d-carousel
     slot(name="contacts-container")
-    //- 
-      https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80
-
 </template>
 
 <script>
+import DefaultCarousel from './DefaultCarousel.vue';
+
 export default {
+  components: {
+    'd-carousel': DefaultCarousel,
+  },
+  props: ['image', 'color', 'itemsImage'],
   name: 'DefaultBody',
 }
 </script>
@@ -30,6 +41,10 @@ export default {
     width: 100%;
   }
   .extra-content {
+    height: 100vh;
+    width: 100%;
+  }
+  .carousel-container {
     height: 100vh;
     width: 100%;
   }

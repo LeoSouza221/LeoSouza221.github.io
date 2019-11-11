@@ -52,7 +52,6 @@ export default {
    }
    .main-page {
      height: 100vh;
-     width: 100vw;
    }
    .my-grid {
      display: grid;
