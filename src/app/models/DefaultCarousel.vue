@@ -1,22 +1,25 @@
 <template lang="pug">
   .defaultCarousel
-    v-card(flat tile)
+    v-card.transparent(flat tile)
       v-window(v-model="onboarding" reverse)
         v-window-item(
-          v-for="n in length"
-          :key="`card-${n}`"
+          v-for="(item, index) in carouselItems"
+          :key="`card-${index}`"
         )
           v-card(
-            color="grey"
-            height="200"
+            max-width="300"
+            class="mx-auto"
+            height="400"
           )
-            v-row(
-              class="fill-height"
-              align="center"
-              justify="center"
-              tag="v-card-text"
+            v-img(
+              :src="item.src"
+              width="300"
+              max-height="300"
             )
-              h1(style="font-size: 5rem;" class="white--text") Slide {{ n }}
+            v-layout.ma-3(justify-center)
+              h3 {{ item.title }}
+            .carousel-infos
+              p {{ item.text }}
       v-card-actions(class="justify-space-between")
         v-btn(
           text
@@ -29,8 +32,8 @@
           mandatory
         )
           v-item(
-            v-for="n in length"
-            :key="`btn-${n}`"
+            v-for="(item, index) in carouselItems"
+            :key="`btn-${index}`"
             v-slot:default="{ active, toggle }"
           )
             v-btn(
@@ -38,16 +41,17 @@
               icon
               @click="toggle"
             )
-              v-iconmdi-record
+              v-icon mdi-record
         v-btn(
           text
           @click="next"
         )
-              v-icon mdi-chevron-right
+          v-icon mdi-chevron-right
 </template>
 
 <script>
 export default {
+  props: ['carouselItems'],
   data: () => ({
     length: 3,
     onboarding: 0,
@@ -64,5 +68,14 @@ export default {
         : this.onboarding - 1
     },
   },
+  name: 'DefaultCarousel',
 }
 </script>
+
+<style scoped>
+  .carousel-infos {
+    padding: 5px;
+    font-size: 12px;
+    text-align: justify;
+  }
+</style>

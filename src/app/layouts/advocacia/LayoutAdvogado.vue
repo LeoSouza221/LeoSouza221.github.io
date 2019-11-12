@@ -19,6 +19,8 @@
       image="url(https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80)"
       color="rgb(0, 0, 0, .7)"
       :itemsImage="itemsImage"
+      carouselTitle="Corpo Jurídico"
+      :carouselItems="carouselItems"
     )
       template(v-slot:text-container)
         v-layout(justify-center row fill-height)
@@ -44,7 +46,7 @@
                     div.text-grid-content 
                       p {{ apresentation1 }}
       template(v-slot:carousel-container)
-
+      template(v-slot:contacts-container)
 </template>
 
 <script>
@@ -80,8 +82,25 @@ export default {
     itemsImage: [
       {
         src: 'https://i.kym-cdn.com/photos/images/newsfeed/001/499/826/2f0.png',
-      }
-    ]
+      },
+    ],
+    carouselItems: [
+      {
+        src: 'https://i.kym-cdn.com/entries/icons/original/000/029/959/Screen_Shot_2019-06-05_at_1.26.32_PM.jpg',
+        title: 'Lawyer 1',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+      },
+      {
+        src: 'https://i.kym-cdn.com/entries/icons/original/000/029/959/Screen_Shot_2019-06-05_at_1.26.32_PM.jpg',
+        title: 'Lawyer 2',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+      },
+      {
+        src: 'https://i.kym-cdn.com/entries/icons/original/000/029/959/Screen_Shot_2019-06-05_at_1.26.32_PM.jpg',
+        title: 'Lawyer 3',
+        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
+      },
+    ],
   }),
   name: 'Advocacia',
 }
