@@ -38,15 +38,29 @@
         .align-item-text
           h2 Contatos
         .align-item-content
-          h2 aki
+          .my-grid.contact-grid
+            .contact-grid-item
+              span teste
+            .contact-grid-item            
+              d-form
+            .contact-grid-item.align-contact-grid
+              .contacts-icons     
+                a
+                  v-icon(dark large) fa fa-envelope
+                a
+                  v-icon(dark large) fab fa-facebook-square
+                a
+                  v-icon(dark large) fab fa-whatsapp
 </template>
 
 <script>
 import DefaultCarousel from './DefaultCarousel.vue';
+import DefaultForm from './DefaultForm.vue';
 
 export default {
   components: {
     'd-carousel': DefaultCarousel,
+    'd-form': DefaultForm,
   },
   props: ['image', 'color', 'itemsImage', 'carouselTitle', 'carouselItems'],
   name: 'DefaultBody',
@@ -89,8 +103,28 @@ export default {
     align-items: center;
   }
   .contacts-container {
-    height: 60vh;
+    height: 80vh;
     display: flex;
     flex-direction: column;
   }
+  .contact-grid {
+    width: 100%;
+    height: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 0.3fr;
+  }
+  .align-contact-grid {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .contacts-icons {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }  
 </style>

@@ -29,7 +29,7 @@ export default {
   }
   .default-container {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     padding: 30px;
   }
   .default-blend {
