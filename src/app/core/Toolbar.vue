@@ -5,12 +5,13 @@
       app
       fixed
       :height="toolbarHeight"
+      width='100vw'
     )
       div.avatar(v-if="$route.name === 'Main'")
       div.align-navbar
         navbar
         v-spacer
-        v-btn.mr-3(
+        v-btn(
           icon
           to="/"
           dark

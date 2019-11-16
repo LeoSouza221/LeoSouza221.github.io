@@ -5,7 +5,6 @@
         v-flex(xs11)
           v-card(flat height="400")
             slot(name="text-container")
-    v-divider.mb-5
     .default-container.default-blend.extra-content(
       :style=`{
         backgroundImage: image,
@@ -14,7 +13,6 @@
     )
       v-layout(justify-center align-center fill-height)
         slot(name="extra-content")
-    v-divider.mb-5    
     .default-container.carousel-container
       slot(name="carousel-container")
         .background-image-align
@@ -32,6 +30,7 @@
       :style=`{
         backgroundImage: image,
         backgroundColor: color,
+        height: contactsHeight,
       }`
     )
       slot(name="contacts-container")
@@ -40,7 +39,7 @@
         .align-item-content
           .my-grid.contact-grid
             .contact-grid-item
-              span teste
+              d-map
             .contact-grid-item            
               d-form
             .contact-grid-item.align-contact-grid
@@ -56,13 +55,26 @@
 <script>
 import DefaultCarousel from './DefaultCarousel.vue';
 import DefaultForm from './DefaultForm.vue';
+import DefaultMap from './DefaultMap.vue';
 
 export default {
   components: {
     'd-carousel': DefaultCarousel,
     'd-form': DefaultForm,
+    'd-map': DefaultMap,
   },
   props: ['image', 'color', 'itemsImage', 'carouselTitle', 'carouselItems'],
+  computed: {
+    contactsHeight() {
+      if (this.$vuetify.breakpoint.width > '1264') {
+        return '60vh';
+      }
+      if (this.$vuetify.breakpoint.width <= '450') {
+        return '100%';
+      }
+      return '80vh';
+    }
+  },
   name: 'DefaultBody',
 }
 </script>
@@ -71,6 +83,15 @@ export default {
 
   .text-container {
     height: calc(100vh - 200px);
+    animation: changeOpacity 3s;
+  }
+  @keyframes changeOpacity {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
   .carousel-container {
     height: 90vh;
@@ -103,7 +124,6 @@ export default {
     align-items: center;
   }
   .contacts-container {
-    height: 80vh;
     display: flex;
     flex-direction: column;
   }
@@ -111,7 +131,14 @@ export default {
     width: 100%;
     height: 100%;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr 0.3fr;
+    grid-template-rows: 1fr 0.4r;
+  }
+  .contact-grid-item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .align-contact-grid {
     grid-column-start: 1;
@@ -126,5 +153,25 @@ export default {
     display: flex;
     justify-content: space-around;
     align-items: center;
-  }  
+  }
+  @media only screen and (max-width: 600px) {
+    .text-container {
+      height: 100vh;
+      padding: 10px;
+    }
+    .contact-grid {
+      grid-template-columns: 3fr;
+      grid-template-rows: 1fr 1fr 0.4fr;
+    }
+    .align-contact-grid {
+      grid-column-start: 1;
+      grid-column-end: 1;
+    }
+    .contacts-icons {
+      width: 100%;
+    }
+    .carousel-container {
+      height: 100vh;
+    }
+  }
 </style>

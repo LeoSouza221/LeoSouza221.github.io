@@ -24,11 +24,12 @@
     )
       template(v-slot:text-container)
         v-layout(justify-center row fill-height)
-          v-flex(xs8)
+          v-flex(xs12 md8)
             v-card-title Apresentação
-            p.mx-3(style="text-align: justify; color: rgb(156, 153, 153)") {{ apresentation }}
-            p.mx-3(style="text-align: justify;color: rgb(156, 153, 153)") {{ apresentation }}
-          v-flex(xs4)
+            .text-grid-content
+              p.mx-5(style="text-align: justify; color: rgb(156, 153, 153)") {{ apresentation }}
+              p.mx-5(style="text-align: justify;color: rgb(156, 153, 153)") {{ apresentation }}
+          v-flex(xs12 md4)
             div.card-image
       template(v-slot:extra-content)
         section.lawyer-extra-content
@@ -179,5 +180,18 @@ export default {
   }
   .text-grid-content p {
     font-size: 11px;
+  }
+  @media only screen and (max-width: 600px) {
+    .my-grid-lawyer {
+      width: 100%;
+      height: 80%;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(3, 1fr);
+      grid-row-gap: 5px;
+    }
+    .text-grid-content p {
+      font-size: 10px;
+    }
+
   }
 </style>

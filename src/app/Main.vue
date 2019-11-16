@@ -87,6 +87,9 @@ export default {
     border-radius: 20px;
   }
   @media only screen and (max-width: 600px) {
+    .default-container {
+      height: 100%;
+    }
     .my-grid-contacts {
       width: 100%;
     }
