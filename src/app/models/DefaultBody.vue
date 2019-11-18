@@ -18,8 +18,8 @@
         .background-image-align
           img(
             src="@/../public/images/balance.png"
-            width="100%"
-            height="100%"
+            :width="imageScale"
+            :height="imageScale"
             style="opacity: 0.3"
           )
         .align-item-text
@@ -73,6 +73,12 @@ export default {
         return '100%';
       }
       return '80vh';
+    },
+    imageScale() {
+      if (this.$vuetify.breakpoint.width <= '450') {
+        return '80%';
+      }
+      return '100%';
     }
   },
   name: 'DefaultBody',
@@ -172,6 +178,11 @@ export default {
     }
     .carousel-container {
       height: 100vh;
+    }
+    .background-image-align {
+      width: 50vh;
+      height: 50vh;
+      transform: translateX(-40%);
     }
   }
 </style>

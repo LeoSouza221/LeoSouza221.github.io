@@ -7,12 +7,18 @@
       flat=true
     )
       template(v-slot:item-left)
-        v-layout(justify-center row align-center fill-height)
-          v-flex(xs1)
-            v-avatar(dark size="80" style="border: solid 2px white; border-radius: 50%")
+        v-layout(justify-center row :align-center="verifyMobile()" fill-height)
+          v-flex(xs3 md1)
+            v-avatar(
+              dark
+              :size="verifyMobile() ? '80' : '40'"
+              style="border: solid 2px white; border-radius: 50%"
+              :class="!verifyMobile() ? 'ma-1' : ''"
+            )
               v-icon(large) fa fa-balance-scale
-          v-flex(xs10)
-            h2.text-center Um Nome Advocacia
+          v-flex(xs9 md10)
+            h2.text-center(v-if="verifyMobile()") Um Nome Advocacia
+            h3.text-center(v-else :class="!verifyMobile() ? 'mt-3' : ''") Um Nome Advocacia
       template(v-slot:menu)
         d-menu(:menuItems="itens")
     d-body(
@@ -29,7 +35,7 @@
             .text-grid-content
               p.mx-5(style="text-align: justify; color: rgb(156, 153, 153)") {{ apresentation }}
               p.mx-5(style="text-align: justify;color: rgb(156, 153, 153)") {{ apresentation }}
-          v-flex(xs12 md4)
+          v-flex(md4 v-if="verifyMobile()")
             div.card-image
       template(v-slot:extra-content)
         section.lawyer-extra-content
@@ -55,8 +61,10 @@ import Pagina from '@/app/core/Pagina.vue';
 import DefaultHeader from '@/app/models/DefaultHeader.vue';
 import DefaultMenu from '@/app/models/DefaultMenuItens.vue';
 import DefaultBody from '@/app/models/DefaultBody.vue';
+import isMobile from '@/mixins/isMobile';
 
 export default {
+  mixins: [isMobile],
   components: {
     Pagina,
     'd-header': DefaultHeader,
