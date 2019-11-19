@@ -44,3 +44,12 @@ export default {
   name: 'Toolbar',
 }
 </script>
+
+<style scoped>
+  .avatar {
+    background-image: url('https://www.gravatar.com/avatar/bbbd4d370977e2098e8349bfd0d7aa06');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>

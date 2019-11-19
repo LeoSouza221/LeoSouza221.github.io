@@ -11,14 +11,14 @@
           v-flex(xs3 md1)
             v-avatar(
               dark
-              :size="verifyMobile() ? '80' : '40'"
-              style="border: solid 2px white; border-radius: 50%"
+              :size="verifyMobile() ? '80' : '60'"
+              style="border: solid 2px white; border-radius: 50%; display: flex; justify-content: center;"
               :class="!verifyMobile() ? 'ma-1' : ''"
             )
               v-icon(large) fa fa-balance-scale
           v-flex(xs9 md10)
             h2.text-center(v-if="verifyMobile()") Um Nome Advocacia
-            h3.text-center(v-else :class="!verifyMobile() ? 'mt-3' : ''") Um Nome Advocacia
+            h3.text-center(v-else :class="!verifyMobile() ? 'mt-5' : ''") Um Nome Advocacia
       template(v-slot:menu)
         d-menu(:menuItems="itens")
     d-body(
@@ -32,7 +32,7 @@
         v-layout(justify-center row fill-height)
           v-flex(xs12 md8)
             v-card-title Apresentação
-            .text-grid-content
+            div(:class="verifyMobile() ? '' : 'text-grid-content'")
               p.mx-5(style="text-align: justify; color: rgb(156, 153, 153)") {{ apresentation }}
               p.mx-5(style="text-align: justify;color: rgb(156, 153, 153)") {{ apresentation }}
           v-flex(md4 v-if="verifyMobile()")
@@ -195,11 +195,10 @@ export default {
       height: 80%;
       grid-template-columns: 1fr;
       grid-template-rows: repeat(3, 1fr);
-      grid-row-gap: 5px;
+      grid-row-gap: 15px;
     }
     .text-grid-content p {
       font-size: 10px;
     }
-
   }
 </style>

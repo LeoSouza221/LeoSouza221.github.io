@@ -162,7 +162,7 @@ export default {
   }
   @media only screen and (max-width: 600px) {
     .text-container {
-      height: 100vh;
+      height: 70vh;
       padding: 10px;
     }
     .contact-grid {
