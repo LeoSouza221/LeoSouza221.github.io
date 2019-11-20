@@ -1,7 +1,7 @@
 export default [
   {
     path: '/layout',
-    component: () => import('./index'),
+    component: () => import('./index.vue'),
     meta: {
       sidebar: {
         icon: 'fa fa-th-large',
@@ -12,7 +12,7 @@ export default [
       {
         path: '/layout/advogado',
         name: 'Advocacia',
-        component: () => import('./LayoutAdvogado.vue'),
+        component: () => import('./advocacia/LayoutAdvogado.vue'),
         meta: {
           sidebar: {
             icon: 'fa fa-balance-scale',

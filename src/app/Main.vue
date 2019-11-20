@@ -1,85 +1,106 @@
 <template lang="pug">
   .main-page
-    v-content(style="height: 100%;")
-      toolbar
-      main-content
-      v-container
-        v-slide-y-transition(mode="out-in")
-          router-view
+    sidebar
+    toolbar
+    v-content(style="height: 100%; width: 100%")
+      main-content(v-if="$route.name === 'Main'")
+      v-slide-y-transition(mode="out-in")
+        router-view
 </template>
 
 <script>
 import MainContent from './core/MainContent.vue';
 import Toolbar from './core/Toolbar.vue';
+import Sidebar from './core/Sidebar.vue';
 
 export default {
   components: {
     MainContent,
     Toolbar,
+    Sidebar,
   },
-  data: () => ({
-  }),
   name: 'Main',
 }
 </script>
 
 <style>
-  .default-header {
-    width: 100%;
-    height: 150px;
-    position: relative;
-    box-shadow: 0 2px 10px grey;
-    margin-bottom: 50px;
+  .default-background {
+    background: #6335e2;
   }
-   .default-header-main {
-     background: linear-gradient(120deg, #00E676, #B9F6CA)
-   }
-   .avatar {
-      position: absolute;
-      bottom: -35%;
-      height: 130px;
-      width: 130px;
-      margin: auto;
-      left: 50%;
-      transform: translateX(-50%);
-      border-radius: 50%;
-      border: solid 5px #00E676;
-      background: #ffffff;
-      box-shadow: 5px 5px 5px grey;
-   }
-   .align-navbar {
-      width: 90%;
-      margin-left: 10%;
-      position: absolute;
-      bottom: 5px;
-      display: flex;
-      justify-content: start;
-   }
-   .main-page {
-     height: 100vh;
-     width: 100vw;
-   }
-   .my-grid {
-     display: grid;
-     padding: 10px;
-     height: 80%;
-   }
-   .my-grid-knowledge {
-     width: 100%;
-     grid-template-columns: repeat(3, 1fr);
-     grid-template-rows: repeat(2, 0.42fr);
-     grid-row-gap: 20px;
-     grid-column-gap: 20%;
-   }
-   .my-grid-contacts {
-     width: 30%;
-     grid-template-columns: repeat(2, 0.5fr);
-     grid-template-rows: 0.5fr;
-   }
-   .my-grid-item {
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     border-radius: 20px;
-   }
+  .default-container {
+    height: 100vh;
+    width: 100%;
+    padding: 30px;
+  }
+  .default-blend {
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+  }
+  .avatar {
+    position: absolute;
+    bottom: -35%;
+    height: 130px;
+    width: 130px;
+    margin: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    border: solid 5px #6335e2;
+    background: #ffffff;
+    box-shadow: 2px 2px 5px black;
+    transition: all .5s ease-in;
+  }
+  .align-navbar {
+    width: 85%;
+    margin-left: 10%;
+    margin-right: 5%;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: start;
+  }
+  .main-page {
+    height: 100vh;
+    overflow-x: hidden;
+  }
+  .my-grid {
+    display: grid;
+    padding: 10px;
+    height: 80%;
+  }
+  .my-grid-knowledge {
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 0.42fr);
+    grid-row-gap: 20px;
+    grid-column-gap: 20%;
+  }
+  .my-grid-contacts {
+    width: 30%;
+    grid-template-columns: repeat(2, 0.5fr);
+    grid-template-rows: 0.5fr;
+  }
+  .my-grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+  }
+  @media only screen and (max-width: 600px) {
+    .default-container {
+      height: 100%;
+    }
+    .my-grid-contacts {
+      width: 100%;
+    }
+    .avatar {
+      height: 80px;
+      width: 80px;
+      bottom: -38%;
+    }
+    .align-navbar {
+      margin: 0;
+    }
+  }
 </style>

@@ -10,6 +10,6 @@ export default {
   components: {
     Pagina,
   },
-  name: 'IndexVenda',
+  name: 'IndexLayout',
 };
 </script>
