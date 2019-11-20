@@ -67,7 +67,7 @@ export default {
   computed: {
     contactsHeight() {
       if (this.$vuetify.breakpoint.width > '1264') {
-        return '60vh';
+        return '70vh';
       }
       if (this.$vuetify.breakpoint.width <= '450') {
         return '100%';

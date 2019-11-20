@@ -23,13 +23,15 @@
               color="secondary"
             )
               v-list-item(
-                :to="item.children[0].path"
+                v-for="(subItem, y) in item.children"
+                :key="y"
+                :to="subItem.path"
                 v-if="item.children && item.children[0].meta"
               )
                 v-list-item-action
-                  v-icon {{ item.children[0].meta.sidebar.icon }}
+                  v-icon {{ subItem.meta.sidebar.icon }}
                 v-list-item-content
-                  v-list-item-title {{ item.children[0].meta.sidebar.title }}
+                  v-list-item-title {{ subItem.meta.sidebar.title }}
               v-list-tile(
                 v-else
                 ripple
