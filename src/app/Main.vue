@@ -1,5 +1,5 @@
 <template lang="pug">
-  .main-page
+  .main-page.background
     sidebar
     toolbar
     v-content(style="height: 100%; width: 100%")
@@ -24,6 +24,11 @@ export default {
 </script>
 
 <style>
+  .background {
+    background: #e9e8e8;
+    width: 100%;
+    height: 100%;
+  }
   .default-background {
     background: #6335e2;
   }

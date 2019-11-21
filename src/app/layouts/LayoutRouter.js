@@ -26,7 +26,7 @@ export default [
         component: () => import('./nutricionista/LayoutNutricionista.vue'),
         meta: {
           sidebar: {
-            icon: 'fa fa-balance-scale',
+            icon: 'fa fa-carrot',
             title: 'Nutrição',
           },
         },
@@ -37,7 +37,7 @@ export default [
         component: () => import('./veterinaria/LayoutVeterinario.vue'),
         meta: {
           sidebar: {
-            icon: 'fa fa-balance-scale',
+            icon: 'fa fa-paw',
             title: 'Veterinário',
           },
         },
@@ -48,7 +48,7 @@ export default [
         component: () => import('./buffet/LayoutBuffet.vue'),
         meta: {
           sidebar: {
-            icon: 'fa fa-balance-scale',
+            icon: 'fa fa-glass-cheers',
             title: 'Buffet',
           },
         },
