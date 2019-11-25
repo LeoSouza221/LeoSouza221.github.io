@@ -41,13 +41,13 @@
                 v-icon(v-html="item.icon")
               v-list-item-content
                 v-list-item-title(v-text="item.title")
-    v-btn(
-      v-else
-      icon
-      dark
-      @click="openSide"
-    )
-      v-icon fa fa-bars   
+    .icon-bar(v-else)
+      v-btn(   
+        icon
+        dark
+        @click="openSide"
+      )
+        v-icon fa fa-bars   
 </template>
 
 <script>

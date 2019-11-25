@@ -29,7 +29,7 @@
         .panel-board-main
           .panel-main
             .panel-text-container
-              p dfmslkdjf anlan asn jklasndfn a nsdfn ljandfl nasdlfnlansdfl nalksdnf lansdlfnalndfl na nl nadslfn
+              p EM OBRAS!!! AGUARDE
           .panel-left
           .panel-top
         .barrier-foot
@@ -62,6 +62,15 @@
     justify-content: center;
     align-items: center;
     z-index: 2;
+    animation: leftSlide 3s;
+  }
+  @keyframes leftSlide {
+    from {
+      transform: translateX(400px);
+    }
+    to {
+      transform: translateX(0);
+    }
   }
   .barrier-adjust {
     position: relative;
@@ -240,50 +249,58 @@
     grid-row-start: 1;
     grid-row-end: 1;
     border: solid 15px black;
-    border-radius: 20px;
     box-shadow: inset 4px 4px 2px black;
     z-index: 2;
   }
   .panel-text-container {
+    font-family: 'Raleway Dots', cursive;
+    font-weight: 400;
     height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 20px;
-    text-align: center;
-    font-size: 20px;
+    font-size: 50px;
     color: white;
-    
-
+    text-align: center;
   }
   .panel-text-container p {
     text-shadow:  0 0 10px white,
-       0 0 20px white,
-       0 0 30px white,
-       0 0 40px yellow,
-       0 0 60px yellow,
-       0 0 80px yellow;
-
+      0 0 20px white,
+      0 0 30px white,
+      0 0 40px yellow,
+      0 0 60px yellow,
+      0 0 80px yellow;
+    animation: light 2s infinite cubic-bezier(0.075, 0.1, 0.08, 1);
+  }
+  @keyframes light{
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
   .panel-left {
     background: rgb(32, 32, 32);
-    height: 95%;
-    width: 12px;
+    height: 98%;
+    width: 13px;
     position: absolute;
     right: 0;
-    bottom: 17px;
-    transform: skewY(-50deg);
-    border-radius: 0 40% 40% 0;
+    bottom: 5px;
+    transform: skewY(-45deg);
+    border-radius: 0 10px 0 0;
   }
   .panel-top {
     background: rgb(32, 32, 32);
-    height: 15px;
+    height: 10px;
     width: calc(100% - 20px);
     position: absolute;
-    top: 5px;
-    left: 53%;
-    border-radius: 40% 40% 0 0;
-    transform: skewX(-50deg) translateX(-50%); 
+    top: 0px;
+    left: 52%;
+    transform: skewX(-50deg) translateX(-50%);
+    border-radius: 0 10px 0 0;
   }
   .panel-foot {
     grid-row-start: 2;
@@ -300,5 +317,63 @@
   }
   .panel-foot-shadow-color {
     background: rgb(32, 32, 32);
+  }
+  @media only screen and (max-width: 1100px) {
+    .panel-text-container {
+      font-size: 40px;
+    }
+  }
+  @media only screen and (max-width: 850px) {
+    .panel-container {
+      width: 35%;
+    }
+  }
+  @media only screen and (max-width: 800px) {
+    .barrier-container {
+      height: 35%;
+      left: 20%;
+      transform: 0;
+    }
+    .barrier-adjust {
+      grid-template-rows: 40% 60%;
+    }
+    .barrier-foot-bar {
+      width: 30px;
+    }
+    .barrier-foot-main {
+      width: 26px;
+    }
+    .barrier-shadow {
+      height: 20%;
+    }
+    .barrier-foot-shadow {
+      top: -2px;
+    }
+    .barrier-board-top {
+      border-radius: 0 10px 0 0;
+    }
+    .screen-container {
+      width: 90%;
+    }
+    .panel-container {
+      height: 50%;
+      width: 50%;
+    }
+    .panel-text-container {
+      font-size: 30px;
+    }
+    .panel-adjust {
+      grid-template-rows: 80% 20%;
+    }
+    .panel-left {
+      bottom: 3.5px;
+      border-radius: 0 10px 0 5px;
+    }
+    .panel-top {
+      left: 53%;
+    }
+    .panel-text-container {
+      font-size: 25px;
+    }
   }
 </style>
