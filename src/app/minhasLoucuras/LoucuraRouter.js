@@ -1,16 +1,16 @@
 export default [
   {
-    path: '/loucuras',
+    path: '/outros',
     component: () => import('./index.vue'),
     meta: {
       sidebar: {
-        icon: 'fa fa-gamepad',
-        title: 'Loucuras',
+        icon: 'fa fa-comment-dots',
+        title: 'Outros',
       },
     },
     children: [
       {
-        path: '/loucuras/jogo-da-velha',
+        path: '/outros/jogo-da-velha',
         name: 'Jogo Da Velha',
         component: () => import('./jogoDaVelha/JogoDaVelha.vue'),
         meta: {

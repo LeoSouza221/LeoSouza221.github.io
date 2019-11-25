@@ -3,7 +3,7 @@
     .default-container.text-container
       v-layout(align-center fill-height justify-center)
         v-flex(xs11)
-          v-card(flat height="400")
+          v-card.elevation-5(flat height="400")
             slot(name="text-container")
     .default-container.default-blend.extra-content(
       :style=`{

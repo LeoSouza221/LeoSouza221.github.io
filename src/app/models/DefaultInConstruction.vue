@@ -56,20 +56,19 @@
     height: 50%;
     width: 50%;
     bottom: 5%;
-    left: 40%;
-    transform: translateX(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 2;
-    animation: leftSlide 3s;
+    animation: leftSlide 3s forwards;
   }
   @keyframes leftSlide {
     from {
-      transform: translateX(400px);
+      left: 0;
     }
     to {
-      transform: translateX(0);
+      left: 40%;
+      transform: translateX(-50%);
     }
   }
   .barrier-adjust {
@@ -197,6 +196,15 @@
     z-index: 0;
     box-shadow: 7px -7px 5px grey;
     border-radius: 20px;
+    animation: topSlide 3s forwards;
+  }
+   @keyframes topSlide {
+    from {
+      top: 0;
+    }
+    to {
+      top: 10%;
+    }
   }
   .screen-toolbar {
     height: 15%;
@@ -217,11 +225,19 @@
     height: 70%;
     width: 25%;
     bottom: 5%;
-    right: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 2;
+    animation: rightSlide 3s forwards;
+  }
+  @keyframes rightSlide {
+    from {
+      right: 0;
+    }
+    to {
+      right: 5%;
+    }
   }
   .panel-adjust {
     position: relative;
@@ -331,8 +347,15 @@
   @media only screen and (max-width: 800px) {
     .barrier-container {
       height: 35%;
-      left: 20%;
-      transform: 0;
+    }
+    @keyframes leftSlide {
+      from {
+        left: -100px;
+      }
+      to {
+        left: 0;
+        transform: translateX(0);
+      }
     }
     .barrier-adjust {
       grid-template-rows: 40% 60%;
