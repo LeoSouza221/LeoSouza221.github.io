@@ -3,12 +3,12 @@
    .fundo1
      .sol
      .predios
-       .predio(:style="{ height: altura, transform: transformar }" v-for="index in 15" :key="index")
-         .janelas
-           .janela(v-for="index in 6" :key="index")
+      //-  .predio(:style="{ height: altura, transform: transformar }" v-for="index in 15" :key="index")
+      //-    .janelas
+      //-      .janela(v-for="index in 6" :key="index")
    .fundo2
-     .estrada
-       .sinalizacao
+    //-  .estrada
+    //-    .sinalizacao
      .linha-estrada1
      .linha-estrada2
    .linhazinha
@@ -24,9 +24,6 @@
      .item(v-for="posicao in posicoes" :key="posicao.numero")
        .quadrado(@click="jogada(posicao.numero)")
          h4 {{ posicao.item }}
-     //- .linha1
-     //- .linha2
-     //- .linha3
 </template>
 
 <script>
@@ -142,7 +139,7 @@ export default {
    display: flex;
    justify-content: center !important;
    align-items: center;
-   height: 100vh !important;
+   height: calc(100vh - 50px)!important;
    width: 100vw !important;
  }
  .fundo1 {
@@ -353,14 +350,6 @@ export default {
      0 0 30px #228DFF,
      0 0 40px #228DFF,
      0 0 70px #228DFF;
- }
- .linha1 {
-   left: 25px;
-   top: 50%;
-   position: absolute;
-   width: 350px;
-   height: 5px;
-   background: #228DFF;
  }
  .texto {
    font-family: 'Faster One', cursive;
