@@ -2,25 +2,25 @@
   .main-page.background
     sidebar
     toolbar
-    footer
     v-content(style="height: 100%; width: 100%")
       main-content(v-if="$route.name === 'Main'")
       v-slide-y-transition(mode="out-in")
         router-view
+    main-footer
 </template>
 
 <script>
 import MainContent from './core/MainContent.vue';
 import Toolbar from './core/Toolbar.vue';
 import Sidebar from './core/Sidebar.vue';
-import Footer from './core/Footer.vue';
+import MainFooter from './core/MainFooter.vue';
 
 export default {
   components: {
     MainContent,
     Toolbar,
     Sidebar,
-    Footer,
+    MainFooter,
   },
   name: 'Main',
 }
@@ -109,6 +109,7 @@ export default {
     }
     .align-navbar {
       margin: 0;
+      height: 50px;
     }
   }
 </style>
