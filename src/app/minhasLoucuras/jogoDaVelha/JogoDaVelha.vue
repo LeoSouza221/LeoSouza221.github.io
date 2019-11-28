@@ -15,7 +15,7 @@
       h1 Jogo da véia
       .triangulo1
       .triangulo2
-    div.champison(v-if="capeao")
+    .champison(v-if="capeao")
       p Vencedor: {{ capeao }}
     .jogo
       //- .rejogar
