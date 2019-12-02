@@ -3,7 +3,7 @@
     .default-container.text-container
       v-layout(align-center fill-height justify-center)
         v-flex(xs11)
-          v-card(flat height="400")
+          v-card.elevation-5(flat height="400")
             slot(name="text-container")
     .default-container.default-blend.extra-content(
       :style=`{
@@ -67,7 +67,7 @@ export default {
   computed: {
     contactsHeight() {
       if (this.$vuetify.breakpoint.width > '1264') {
-        return '60vh';
+        return '70vh';
       }
       if (this.$vuetify.breakpoint.width <= '450') {
         return '100%';

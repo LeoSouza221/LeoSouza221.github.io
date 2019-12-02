@@ -1,29 +1,37 @@
 <template lang="pug">
-  .main-page
+  .main-page.background
     sidebar
     toolbar
     v-content(style="height: 100%; width: 100%")
       main-content(v-if="$route.name === 'Main'")
       v-slide-y-transition(mode="out-in")
         router-view
+    main-footer
 </template>
 
 <script>
 import MainContent from './core/MainContent.vue';
 import Toolbar from './core/Toolbar.vue';
 import Sidebar from './core/Sidebar.vue';
+import MainFooter from './core/MainFooter.vue';
 
 export default {
   components: {
     MainContent,
     Toolbar,
     Sidebar,
+    MainFooter,
   },
   name: 'Main',
 }
 </script>
 
 <style>
+  .background {
+    background: #e9e8e8;
+    width: 100%;
+    height: 100%;
+  }
   .default-background {
     background: #6335e2;
   }
@@ -101,6 +109,7 @@ export default {
     }
     .align-navbar {
       margin: 0;
+      height: 50px;
     }
   }
 </style>

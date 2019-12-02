@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-app.background
+  v-app
     v-fade-transition(mode="out-in")
       router-view
     v-snackbar(
@@ -46,11 +46,3 @@ export default {
   name: 'App',
 };
 </script>
-
-<style >
-  .background {
-    background: #9a9a9b;
-    width: 100%;
-    height: 100%;
-  }
-</style>

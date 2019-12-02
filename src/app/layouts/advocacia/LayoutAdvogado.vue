@@ -124,7 +124,7 @@ export default {
     background-image: url(https://images.unsplash.com/photo-1436450412740-6b988f486c6b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
     background-position: center;
     background-size: cover;
-    width: 95%;
+    width: 100%;
     height: 100%;
   }
   .lawyer-extra-content {

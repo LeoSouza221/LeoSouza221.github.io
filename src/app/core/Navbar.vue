@@ -1,7 +1,7 @@
 <template lang="pug">
   .sidebar
-    transition(name="fade")
-      template(v-for="(item, index) in sideBarRoutes" v-if="verifyMobile()")
+    .nav-items(v-if="verifyMobile()")
+      template(v-for="(item, index) in sideBarRoutes" )
         v-menu.mx-3(open-on-hover offset-y transition="slide-y-transition")
           template(v-slot:activator="{ on }")
             v-btn.transparent(
@@ -23,13 +23,15 @@
               color="secondary"
             )
               v-list-item(
-                :to="item.children[0].path"
+                v-for="(subItem, y) in item.children"
+                :key="y"
+                :to="subItem.path"
                 v-if="item.children && item.children[0].meta"
               )
                 v-list-item-action
-                  v-icon {{ item.children[0].meta.sidebar.icon }}
+                  v-icon {{ subItem.meta.sidebar.icon }}
                 v-list-item-content
-                  v-list-item-title {{ item.children[0].meta.sidebar.title }}
+                  v-list-item-title {{ subItem.meta.sidebar.title }}
               v-list-tile(
                 v-else
                 ripple
@@ -40,8 +42,8 @@
                   v-icon(v-html="item.icon")
                 v-list-item-content
                   v-list-item-title(v-text="item.title")
-      v-btn(
-        v-else
+    .icon-bar(v-else)
+      v-btn(   
         icon
         dark
         @click="openSide"
