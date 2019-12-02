@@ -11,18 +11,29 @@
       .linha-estrada1
       .linha-estrada2
     .linhazinha
-    .texto
-      h1 Jogo da véia
+    .jogo-titulo
+      
       .triangulo1
       .triangulo2
+      .titulo
+        h1 Jogo da velha
     .champison(v-if="capeao")
-      p Vencedor: {{ capeao }}
-    .jogo
-      //- .rejogar
-      //-   v-btn Rejogar
-      .item(v-for="posicao in posicoes" :key="posicao.numero")
-        .quadrado(@click="jogada(posicao.numero)")
-          h4 {{ posicao.item }}
+      p {{ capeao }}
+    .jogo-container
+      .jogo-alinhar
+        .jogo
+          .item(v-for="posicao in posicoes" :key="posicao.numero")
+            .quadrado(@click="jogada(posicao.numero)")
+              h4 {{ posicao.item }}
+      .rejogar
+        v-btn(
+          v-if="capeao"
+          @click="replay"
+          dark
+          style="background: linear-gradient(170deg, rgb(19, 0, 41) 50%, rgb(15, 0, 71) 100%)"
+        ) 
+          v-icon(left small) fa fa-redo-alt
+          span Rejogar
 </template>
 
 <script>
@@ -30,7 +41,6 @@ export default {
   data: () => ({
     capeao: '',
     numeroJogada: 1,
-    fimDeJogo: false,
     vez: true,
     mont: [
       {
@@ -129,9 +139,6 @@ export default {
       },
     ],
   }),
-  computed: {
-    
-  },
   methods: {
     altura(alt) {
       return `${40 + alt}px`;
@@ -163,8 +170,21 @@ export default {
         return array.every(num => this.itemsDoJogo[item].includes(num));
       });
       if (vencedor.length > 0) {
-        this.capeao = item;
-      }
+        this.capeao = `Vencedor: ${item}`;
+      } 
+      if (this.numeroJogada >= 10) {
+        this.capeao = 'Empate';
+      } 
+    },
+    replay() {
+      this.capeao = "";
+      this.itemsDoJogo.X = [];
+      this.itemsDoJogo.O = [];
+      this.numeroJogada = 1;
+      this.vez = true;
+      this.posicoes.forEach((posicao) => {
+        posicao.item = "";
+      });
     },
   },
   name: 'Jogo',
@@ -330,6 +350,14 @@ export default {
       opacity: 0;
     }
   }
+  .jogo-container {
+    width: 400px;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70% 30%;
+    z-index: 2;
+  }
   .jogo {
     z-index: 10;
     height: 400px;
@@ -347,10 +375,20 @@ export default {
     grid-gap: 10px;
     text-align: center;
   }
+  .jogo-alinhar {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-end;
+  }
   .quadrado {
     height: 100%;
     width: 100%;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .item {
     background-color: white;
@@ -364,7 +402,7 @@ export default {
       0 0 40px #228DFF,
       0 0 70px #228DFF;
   }
-  .texto {
+  .jogo-titulo {
     font-family: 'Faster One', cursive;
     font-size: 20px;
     height: 200px;
@@ -376,18 +414,25 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center
-    /* transform: rotate(-45deg); */
+  }
+  .titulo {
+    position: absolute;
+    top: 80px;
+    left: 40px;
+    z-index: 1;
+    animation: elastico 2s cubic-bezier(.75,-0.8,0,1.75) forwards;
   }
   .triangulo1 {
     position: absolute;
     top: 0;
+    left: 0;
     width: 0;
     height: 0;
     border-left: 200px solid transparent;
     border-right: 200px solid transparent;
     border-bottom: 200px solid cyan;
-    transform: rotate(-10deg);
     z-index: 1;
+    animation: elastico 2s cubic-bezier(.75,-0.8,0,3) forwards;
   }
   .triangulo2 {
     position: absolute;
@@ -400,6 +445,7 @@ export default {
     border-bottom: 200px solid rgb(11, 14, 56);
     transform: rotate(-10deg);
     z-index: 0;
+    animation: elastico 2.5s cubic-bezier(.75,-0.8,0,3) forwards;
   }
   h1 {
     z-index: 2;
@@ -411,7 +457,14 @@ export default {
       0 0 50px rgb(18, 23, 95),
       0 0 60px rgb(18, 23, 95),
       0 0 70px rgb(18, 23, 95);
-    transform: rotate(-10deg);
+  }
+  @keyframes elastico {
+    from {
+      transform: translateX(-100px) rotate(-10deg);
+    }
+    to {
+      transform: translateX(0) rotate(-10deg);
+    }
   }
   h4 {
     font-size: 80px;
@@ -428,12 +481,12 @@ export default {
     width: 100%;
     text-align: center;
     animation: pisca 2s infinite;
-    z-index: 4;
+    z-index: 10;
   }
   .rejogar {
-    position: absolute;
-    width: 400px;
-    top: 7em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   @keyframes pisca {
     50% {
@@ -447,12 +500,12 @@ export default {
       0 0 80px yellow;
     }
   }
-  @media screen and (max-width: 400px){
+  @media screen and (max-width: 600px){
     .jogo {
       height: 250px;
       width: 250px;
     }
-    .texto {
+    .jogo-titulo {
       animation: virar 2s;
       transform: rotate(0deg);
       width: 100%;
@@ -460,17 +513,26 @@ export default {
       text-align: center;
     }
     .rejogar {
-      width: 250px;
+      width: 100%;
     }
     .champison {
+      top: 15%;
       font-size: 30px;
     }
+    .titulo {
+      position: absolute;
+      top: 20px;
+      left: 10px;
+      z-index: 1;
+    }
     .triangulo1 {
+      left: 10px;
       border-left: 80px solid transparent;
       border-right: 80px solid transparent;
       border-bottom: 80px solid cyan;
     }
     .triangulo2 {
+      left: 20px;
       border-left: 80px solid transparent;
       border-right: 80px solid transparent;
       border-bottom: 80px solid rgb(11, 14, 56);
@@ -489,6 +551,9 @@ export default {
     }
     h4 {
       font-size: 40px;
+    }
+    .estrada {
+      width: 60vw;
     }
   }
 </style>
