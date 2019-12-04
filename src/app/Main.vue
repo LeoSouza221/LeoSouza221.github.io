@@ -71,6 +71,7 @@ export default {
   .main-page {
     height: 100vh;
     overflow-x: hidden;
+    z-index: 2;
   }
   .my-grid {
     display: grid;

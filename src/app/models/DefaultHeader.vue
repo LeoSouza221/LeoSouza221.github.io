@@ -2,7 +2,7 @@
 	.defaultHeader
 		v-toolbar(
 			:height="height"
-			dark
+			:dark="dark"
 			fixed
 			:style=`{
 				backgroundImage: image,
@@ -10,6 +10,7 @@
 				backgroundBlendMode: 'multiply',
 				backgroundSize: 'cover',
 				backgroundPosition: 'center',
+				borderBottom: '1px solid rgb(170, 169, 169)',
 			}`
 			:flat="flat"
 		)
@@ -19,7 +20,7 @@
 
 <script>
 export default {
-	props: ['height', 'color', 'image', 'flat'],
+	props: ['height', 'color', 'image', 'flat', 'dark'],
 	name: 'DefaulHeader',
 }
 </script>

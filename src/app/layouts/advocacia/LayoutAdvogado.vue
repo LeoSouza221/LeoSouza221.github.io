@@ -5,6 +5,7 @@
       color="rgb(0, 0, 0, .7)"
       image="url(https://images.unsplash.com/photo-1436450412740-6b988f486c6b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80)"
       flat=true
+      dark=true
     )
       template(v-slot:item-left)
         v-layout(justify-center row :align-center="verifyMobile()" fill-height)
@@ -20,13 +21,14 @@
             h2.text-center(v-if="verifyMobile()") Um Nome Advocacia
             h3.text-center(v-else :class="!verifyMobile() ? 'mt-5' : ''") Um Nome Advocacia
       template(v-slot:menu)
-        d-menu(:menuItems="itens")
+        d-menu(:menuItems="itens" dark=true)
     d-body(
       image="url(https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80)"
       color="rgb(0, 0, 0, .7)"
       :itemsImage="itemsImage"
       carouselTitle="Corpo Jurídico"
       :carouselItems="carouselItems"
+      xs="xs11"
     )
       template(v-slot:text-container)
         v-layout(justify-center row fill-height)

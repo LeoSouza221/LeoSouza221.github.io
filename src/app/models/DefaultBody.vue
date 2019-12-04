@@ -1,9 +1,9 @@
 <template lang="pug">
   .defaultBody
-    .default-container.text-container
+    .default-container.text-container(class="white-background")
       v-layout(align-center fill-height justify-center)
-        v-flex(xs11)
-          v-card.elevation-5(flat height="400")
+        v-flex(:class="xs")
+          v-card(flat height="400" :hover="hover")
             slot(name="text-container")
     .default-container.default-blend.extra-content(
       :style=`{
@@ -13,7 +13,7 @@
     )
       v-layout(justify-center align-center fill-height)
         slot(name="extra-content")
-    .default-container.carousel-container
+    .default-container.carousel-container(class="white-background")
       slot(name="carousel-container")
         .background-image-align
           img(
@@ -63,7 +63,7 @@ export default {
     'd-form': DefaultForm,
     'd-map': DefaultMap,
   },
-  props: ['image', 'color', 'itemsImage', 'carouselTitle', 'carouselItems'],
+  props: ['image', 'color', 'itemsImage', 'carouselTitle', 'carouselItems', 'hover', 'xs'],
   computed: {
     contactsHeight() {
       if (this.$vuetify.breakpoint.width > '1264') {
@@ -86,7 +86,9 @@ export default {
 </script>
 
 <style scoped>
-
+  .white-background {
+    background: white;
+  }
   .text-container {
     height: calc(100vh - 200px);
     animation: changeOpacity 3s;

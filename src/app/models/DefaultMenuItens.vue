@@ -4,12 +4,12 @@
       template(v-for="(item, index) in menuItems")
         v-btn(
           text
-          dark
+          :dark="dark"
         ) {{ item.text }}
     v-menu(offset-y v-else)
       template(v-slot:activator="{ on }")
         v-btn(
-          dark
+          :dark="dark"
           v-on="on"
           icon
         )
@@ -28,7 +28,7 @@ import isMobile from '@/mixins/isMobile';
 
 export default {
   mixins: [isMobile],
-  props: ['menuItems'],
+  props: ['menuItems', 'dark'],
   name: 'DefaultMenuItens',
 }
 </script>
