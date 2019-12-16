@@ -52,7 +52,7 @@
           div.content-lawyer-extra-content
             div.my-grid.my-grid-lawyer
               template(v-for="i in 3")
-                div.my-grid-item-lawyer
+                div.my-grid-item-lawyer(data-anima="esquerda")
                   div.avatar-grid
                     v-avatar(dark size="80" style="border: solid 2px white; border-radius: 50%;")
                       v-icon(large style="color: #fff;") fa fa-balance-scale
@@ -69,6 +69,7 @@ import DefaultHeader from '@/app/models/DefaultHeader.vue';
 import DefaultMenu from '@/app/models/DefaultMenuItens.vue';
 import DefaultBody from '@/app/models/DefaultBody.vue';
 import isMobile from '@/mixins/isMobile';
+// import onScroll from '@/mixins/onScroll';
 
 export default {
   mixins: [isMobile],
@@ -81,6 +82,8 @@ export default {
   data: () => ({
     apresentation1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     apresentation: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    animacaoClass: null,
+    teste: null,
     itens: [
       {
         text: 'Sobre',
@@ -115,6 +118,33 @@ export default {
       },
     ],
   }),
+  mounted() {
+    const elementos = document.querySelectorAll('[data-anima]');
+    const app = this;
+    this.animacaoClass = 'animacao';
+    if (elementos.length) {
+      this.teste = 'aki3'
+      window.addEventListener('scroll', function() {
+        this.teste = 'aki4'
+        app.animaScroll(elementos);
+      })
+    }
+  },
+  methods: {
+    animaScroll(elementos) {
+      this.teste = 'aki';
+      const topoPaginaNaJanela = window.pageYOffset+((window.innerHeight*3)/4);
+      elementos.forEach((elemento) => {
+        this.teste = 'aki2';
+
+        if (topoPaginaNaJanela > elemento.offsetTop) {
+          elemento.classList.add(this.animacaoClass);
+        } else {
+          elemento.classList.remove(this.animacaoClass);
+        }
+      });
+    },
+  },
   name: 'LayoutVeterinario',
 }
 </script>

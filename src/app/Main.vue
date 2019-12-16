@@ -96,6 +96,18 @@ export default {
     align-items: center;
     border-radius: 20px;
   }
+  [data-anima] {
+    opacity: 0;
+    transition: .5s;
+  }
+  [data-anima="esquerda"] {
+    transform: translateX(-50px);
+  }
+  [data-anima].animacao {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 2;
+  }
   @media only screen and (max-width: 600px) {
     .default-container {
       height: 100%;
