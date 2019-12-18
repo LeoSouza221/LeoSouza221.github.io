@@ -34,32 +34,38 @@
       carouselTitle="Serviços"
       :carouselItems="carouselItems"
       hover=true
-      xs="xs7"
+      :xs="verifyMobile() ? 'xs7' : 'xs12'"
     )
       template(v-slot:text-container)
         v-card-title.text-center Veterinária Doguinho
-        
         v-layout(justify-center row fill-height)
-          v-flex(xs12)
+          v-flex(xs10 md5)
             div(:class="verifyMobile() ? '' : 'text-grid-content'")
               p.mx-5(style="text-align: justify; color: rgb(156, 153, 153)") {{ apresentation }}
-              p.mx-5(style="text-align: justify;color: rgb(156, 153, 153)") {{ apresentation }}
-          
+          v-flex(xs10 md7)
+            div(style="display: flex; width: 100%; height: 100%; justify-content: center; ")
+              iframe(
+                :width="verifyMobile() ? '450px' : '300px'"
+                :height="verifyMobile() ? '300px' : '200px'"
+                src="https://www.youtube.com/embed/XCJyMxuu2gI"
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              )
       template(v-slot:extra-content)
-        section.lawyer-extra-content
-          div.title-lawyer-extra-content
+        section.vet-extra-content
+          div.title-vet-extra-content
             h2.white--text Atuações
-          div.content-lawyer-extra-content
-            div.my-grid.my-grid-lawyer
+          div.content-vet-extra-content
+            div.my-grid.my-grid-vet
               template(v-for="i in 3")
-                div.my-grid-item-lawyer(data-anima="esquerda")
+                div.my-grid-item-vet(data-anima="esquerda")
                   div.avatar-grid
                     v-avatar(dark size="80" style="border: solid 2px white; border-radius: 50%;")
                       v-icon(large style="color: #fff;") fa fa-balance-scale
                   div.text-grid
                     h4.text-grid-title Lorem
                     div.text-grid-content 
-  //- //-   template(v-slot:carousel-container)
+      template(v-slot:carousel-container)
   //- //-   template(v-slot:contacts-container)
 </template>
 
@@ -102,18 +108,15 @@ export default {
     ],
     carouselItems: [
       {
-        src: 'https://i.kym-cdn.com/entries/icons/original/000/029/959/Screen_Shot_2019-06-05_at_1.26.32_PM.jpg',
-        title: 'Lawyer 1',
+        title: 'vet 1',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
       },
       {
-        src: 'https://i.kym-cdn.com/entries/icons/original/000/029/959/Screen_Shot_2019-06-05_at_1.26.32_PM.jpg',
-        title: 'Lawyer 2',
+        title: 'vet 2',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
       },
       {
-        src: 'https://i.kym-cdn.com/entries/icons/original/000/029/959/Screen_Shot_2019-06-05_at_1.26.32_PM.jpg',
-        title: 'Lawyer 3',
+        title: 'vet 3',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
       },
     ],
@@ -128,6 +131,14 @@ export default {
         this.teste = 'aki4'
         app.animaScroll(elementos);
       })
+    }
+  },
+  computed: {
+    imageScale() {
+      if (this.$vuetify.breakpoint.width <= '450') {
+        return '80%';
+      }
+      return '100%';
     }
   },
   methods: {
@@ -150,7 +161,7 @@ export default {
 </script>
 
 <style scoped>
-  .lawyerLayout {
+  .vetLayout {
     font-family: 'Merriweather', serif;
     color: rgb(255, 255, 255);
   }
@@ -161,31 +172,31 @@ export default {
     width: 100%;
     height: 100%;
   }
-  .lawyer-extra-content {
+  .vet-extra-content {
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
     padding: 30px;
   }
-  .title-lawyer-extra-content {
+  .title-vet-extra-content {
     height: 20%;
     width: 100%;
   }
-  .content-lawyer-extra-content {
+  .content-vet-extra-content {
     height: 80%;
     width: 100%;
     display: flex;
     justify-content: center;
   }
-  .my-grid-lawyer {
+  .my-grid-vet {
     width: 100%;
     height: 80%;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 15%;
   }
-  .my-grid-item-lawyer {
+  .my-grid-item-vet {
     display: flex;
     justify-content: center;
     border: solid 2px black;
@@ -224,7 +235,7 @@ export default {
     font-size: 11px;
   }
   @media only screen and (max-width: 600px) {
-    .my-grid-lawyer {
+    .my-grid-vet {
       width: 100%;
       height: 80%;
       grid-template-columns: 1fr;

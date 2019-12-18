@@ -1,9 +1,11 @@
 <template lang="pug">
   .defaultBody
-    .default-container.text-container(class="white-background")
+    .default-container.text-container(
+      class="white-background"
+    )
       v-layout(align-center fill-height justify-center)
         v-flex(:class="xs")
-          v-card(flat height="400" :hover="hover")
+          v-card(flat height="400")
             slot(name="text-container")
     .default-container.default-blend.extra-content(
       :style=`{
@@ -21,11 +23,13 @@
             :width="imageScale"
             :height="imageScale"
             style="opacity: 0.3"
+            v-if="extraBackground"
           )
         .align-item-text
           h2 {{ carouselTitle }}
         .align-item-content
-          d-carousel(:carouselItems="carouselItems")
+          d-carousel(:carouselItems="carouselItems" v-if="this.$vuetify.breakpoint.width < 1000")
+          d-card(:carouselItems="carouselItems" v-else)
     .default-container.default-blend.contacts-container(
       :style=`{
         backgroundImage: image,
@@ -53,7 +57,9 @@
 </template>
 
 <script>
+import isMobile from '@/mixins/isMobile';
 import DefaultCarousel from './DefaultCarousel.vue';
+import DefaultCard from './DefaultCard.vue';
 import DefaultForm from './DefaultForm.vue';
 import DefaultMap from './DefaultMap.vue';
 
@@ -62,8 +68,10 @@ export default {
     'd-carousel': DefaultCarousel,
     'd-form': DefaultForm,
     'd-map': DefaultMap,
+    'd-card': DefaultCard,
   },
-  props: ['image', 'color', 'itemsImage', 'carouselTitle', 'carouselItems', 'hover', 'xs'],
+  mixins: [isMobile],
+  props: ['image', 'color', 'itemsImage', 'carouselTitle', 'carouselItems', 'hover', 'xs', 'extraBackground'],
   computed: {
     contactsHeight() {
       if (this.$vuetify.breakpoint.width > '1264') {

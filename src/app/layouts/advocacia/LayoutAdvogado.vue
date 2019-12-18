@@ -29,6 +29,7 @@
       carouselTitle="Corpo Jurídico"
       :carouselItems="carouselItems"
       xs="xs11"
+      extraBackground="@/../public/images/balance.png"
     )
       template(v-slot:text-container)
         v-layout(justify-center row fill-height)
