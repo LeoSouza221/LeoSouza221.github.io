@@ -287,7 +287,7 @@ export default {
 
   .my-grid-lawyer {
     width: 100%;
-    height: 80%;
+    height: 90%;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 15%;
@@ -335,28 +335,6 @@ export default {
   }
   .text-grid-content p {
     font-size: 11px;
-  }
-
-  .carousel-infos {
-    padding: 5px;
-    font-size: 12px;
-    text-align: justify;
-  }
-
-  .align-item-content {
-    display: flex;
-    height: 80%;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .background-image-align {
-    width: 80vh;
-    height: 80vh;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
   }
 
   .contacts-container {
