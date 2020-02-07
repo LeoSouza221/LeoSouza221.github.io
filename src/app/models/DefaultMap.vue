@@ -16,7 +16,7 @@ export default {
   computed: {
     mapWidth() {
       if (this.$vuetify.breakpoint.width > '960') {
-        return '700';
+        return '500';
       } 
       return '300';
     },

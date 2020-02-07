@@ -1,7 +1,7 @@
 export default {
   methods: {
     verifyMobile() {
-      return this.$vuetify.breakpoint.width > 450;
+      return this.$vuetify.breakpoint.width > 700;
     }
   },
 }
