@@ -8,8 +8,8 @@
             flat 
             :style=`
               verifyMobile() ? 
-              'background: linear-gradient(140deg, #6335e2 60%, white 40%)' : 
-              'background: linear-gradient(180deg, #6335e2 0, #6335e2 59%, white 59%, white 80%, #6335e2 80%, #6335e2 100%)'
+              'background: linear-gradient(140deg, #275DF6 60%, white 40%)' : 
+              'background: linear-gradient(180deg, #275DF6 0, #6335e2 59%, white 59%, white 80%, #6335e2 80%, #6335e2 100%)'
             `
           )
             v-layout.ma-3(justify-center row wrap)

@@ -4,7 +4,7 @@
       height="150"
       dark
       fixed
-      style="background: linear-gradient(to right bottom, #272829 70%, #afafaf 30%)"
+      style="background: linear-gradient(to right bottom, #000d26 70%, #bda346 30%)"
     )
       v-layout(justify-center row :align-center="verifyMobile()" fill-height)
         v-flex(xs3 md1)
@@ -20,29 +20,33 @@
           h3.text-center(v-else :class="!verifyMobile() ? 'mt-5' : ''") Um Nome Advocacia
       d-menu(:menuItems="itens")
     main
-      .parallax-image
+      .parallax-image(
+        style="background-image: url(https://images.unsplash.com/photo-1575505586569-646b2ca898fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1505&q=80);"
+      )
       .apresentation
         v-row(align="center" justify="center" style="height: 100%")
-          v-card.elevation-5(
+          v-card.transparent(
             :height="verifyMobile() ? 500 : 600"
             :width="verifyMobile() ? 1000 : 350"
-            style="background: radial-gradient(circle at top left, #272829 80%, #afafaf 20%); color: white"
+            
             light
+            flat
           )
             v-row(align="center" justify="center" style="height: 100%")
               v-col(cols="4" style="margin: 0; padding: 0" v-if="verifyMobile()")
                 img(
-                  src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
+                  src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
                   width="100%"
                   height="500"
                   style="margin: 0; padding: 0"
                 )
               v-col(:cols="verifyMobile() ? 8 : 11" style="height: 100%")
                 div(class="apresentation-content")
-                  h1 Apresentação
+                  h1(style="color: #000d26") Apresentação
                   div(class="card-text")
                     p.mx-5 {{ apresentation }}
                     p.mx-5 {{ apresentation1 }}
+                    p.mx-5(v-if="verifyMobile()") {{ apresentation }}
       .atuacao-container
         v-row(align="center" justify="center" style="height: 100%")
           section.lawyer-extra-content
@@ -59,55 +63,59 @@
                       h4.text-grid-title Lorem
                       .text-grid-content 
                         p {{ apresentation1 }}
-      div(style="width: 100%; height: 700px")
+      .parallax-image(
+        style="background-image: url(https://images.unsplash.com/photo-1575505586569-646b2ca898fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1505&q=80);"
+      )
+      div(style="width: 100%; height: calc(100% - 150px);")
         v-row(align="center" justify="center" style="height: 100%")
           section.lawyer-extra-content
             div.title-lawyer-extra-content
               h2 Corpo Juridico
-            v-card.transparent(flat)
-              v-window(v-model="onboarding" reverse)
-                v-window-item(
-                  v-for="(item, index) in carouselItems"
-                  :key="`card-${index}`"
-                  style="background: #272829; border-radius: 5px"
-                )
-                  .avatar-grid
-                    v-img(
-                      :src="item.src"
-                      width="300"
-                      max-height="300"
-                    )
-                  .text-grid
-                    h3.text-grid-title Lorem
-                    .text-grid-content 
-                      p {{ item.text }}
-              v-card-actions(class="justify-space-between")
-                v-btn(
-                  text
-                  @click="prev"
-                )
-                  v-icon mdi-chevron-left
-                v-item-group(
-                  v-model="onboarding"
-                  class="text-center"
-                  mandatory
-                )
-                  v-item(
+            v-row(justify="center" align="center" style="height: 100%")
+              v-card.transparent(flat :width="verifyMobile() ? 700 : 350" height="600px")
+                v-window(v-model="onboarding" reverse)
+                  v-window-item(
                     v-for="(item, index) in carouselItems"
-                    :key="`btn-${index}`"
-                    v-slot:default="{ active, toggle }"
+                    :key="`card-${index}`"
+                    style="background: #000d26; border-radius: 5px"
                   )
-                    v-btn(
-                      :input-value="active"
-                      icon
-                      @click="toggle"
+                    .avatar-grid
+                      v-img(
+                        :src="item.src"
+                        width="300"
+                        max-height="300"
+                      )
+                    .text-grid
+                      h3.text-grid-title Lorem
+                      .text-grid-content 
+                        p {{ item.text }}
+                v-card-actions(class="justify-space-between")
+                  v-btn(
+                    text
+                    @click="prev"
+                  )
+                    v-icon mdi-chevron-left
+                  v-item-group(
+                    v-model="onboarding"
+                    class="text-center"
+                    mandatory
+                  )
+                    v-item(
+                      v-for="(item, index) in carouselItems"
+                      :key="`btn-${index}`"
+                      v-slot:default="{ active, toggle }"
                     )
-                      v-icon mdi-record
-                v-btn(
-                  text
-                  @click="next"
-                )
-                  v-icon mdi-chevron-right
+                      v-btn(
+                        :input-value="active"
+                        icon
+                        @click="toggle"
+                      )
+                        v-icon mdi-record
+                  v-btn(
+                    text
+                    @click="next"
+                  )
+                    v-icon mdi-chevron-right
       .contacts-container
         v-row(align="center" justify="center" style="height: 100%")
           section.lawyer-extra-content
@@ -131,9 +139,7 @@
 
 <script>
 import Pagina from '@/app/core/Pagina.vue';
-import DefaultHeader from '@/app/models/DefaultHeader.vue';
 import DefaultMenu from '@/app/models/DefaultMenuItens.vue';
-import DefaultBody from '@/app/models/DefaultBody.vue';
 import DefaultForm from '@/app/models/DefaultForm.vue';
 import DefaultMap from '@/app/models/DefaultMap.vue';
 import isMobile from '@/mixins/isMobile';
@@ -142,9 +148,7 @@ export default {
   mixins: [isMobile],
   components: {
     Pagina,
-    'd-header': DefaultHeader,
     'd-menu': DefaultMenu,
-    'd-body': DefaultBody,
     'd-form': DefaultForm,
     'd-map': DefaultMap,
   },
@@ -174,17 +178,17 @@ export default {
     ],
     carouselItems: [
       {
-        src: 'https://i.kym-cdn.com/entries/icons/original/000/029/959/Screen_Shot_2019-06-05_at_1.26.32_PM.jpg',
+        src: 'https://images.unsplash.com/photo-1459499362902-55a20553e082?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80',
         title: 'Lawyer 1',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
       },
       {
-        src: 'https://i.kym-cdn.com/entries/icons/original/000/029/959/Screen_Shot_2019-06-05_at_1.26.32_PM.jpg',
+        src: 'https://images.unsplash.com/photo-1459499362902-55a20553e082?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80',
         title: 'Lawyer 2',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
       },
       {
-        src: 'https://i.kym-cdn.com/entries/icons/original/000/029/959/Screen_Shot_2019-06-05_at_1.26.32_PM.jpg',
+        src: 'https://images.unsplash.com/photo-1459499362902-55a20553e082?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80',
         title: 'Lawyer 3',
         text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'
       },
@@ -223,7 +227,6 @@ export default {
   .parallax-image {
     width: 100vw;
     height: calc(100vh - 220px);
-    background-image: url(https://images.unsplash.com/photo-1575505586569-646b2ca898fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1505&q=80);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -263,7 +266,7 @@ export default {
   .atuacao-container {
     width: 100%; 
     height: 500px;
-    background: radial-gradient(circle at top right, #272829 80%,#afafaf 20%);
+    background: radial-gradient(circle at top right, #000d26 80%,#bda346 20%);
   }
 
   .lawyer-extra-content {
@@ -298,10 +301,15 @@ export default {
     justify-content: center;
     border-radius: 5px;
     border: solid 1px #afafaf;
-    background: #272829;
+    background: #000d26;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     padding: 2px;
     flex-direction: column;
+    transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+  
+   .my-grid-item-lawyer:hover {
+    transform: scale(1.1)
   }
 
   .avatar-grid {
@@ -340,7 +348,7 @@ export default {
   .contacts-container {
     width: 100%; 
     height: 600px;
-    background: radial-gradient(circle at top left, #272829 80%, #afafaf 20%);
+    background: radial-gradient(circle at top left, #000d26 80%, #bda346 20%);
     color: white;
   }
 
