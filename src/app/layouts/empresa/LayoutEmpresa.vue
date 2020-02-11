@@ -232,7 +232,7 @@ export default {
         : this.onboarding - 1
     },
   },
-  name: 'Advocacia',
+  name: 'Empresa',
 }
 </script>
 
