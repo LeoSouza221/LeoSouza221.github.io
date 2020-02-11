@@ -14,13 +14,13 @@
           icon
         )
           v-icon fa fa-ellipsis-v
-      v-list
+      v-list(:color="color")
         v-list-item(
           v-for="(item, index) in menuItems"
           :key="index"
           @click=""
         )
-          v-list-item-title {{ item.text }}
+          v-list-item-title.white--text {{ item.text }}
 </template>
 
 <script>
@@ -28,7 +28,7 @@ import isMobile from '@/mixins/isMobile';
 
 export default {
   mixins: [isMobile],
-  props: ['menuItems'],
+  props: ['menuItems', 'color'],
   name: 'DefaultMenuItens',
 }
 </script>

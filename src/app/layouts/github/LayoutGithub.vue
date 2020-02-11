@@ -9,6 +9,6 @@ export default {
   components: {
     InConstruction,
   },
-  name: 'LayoutBuffet',
+  name: 'LayoutGithub',
 }
 </script>

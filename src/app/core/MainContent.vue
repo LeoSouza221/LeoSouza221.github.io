@@ -20,26 +20,26 @@
                   p.text-adjust.white--text.show-content Atualmente trabalho como desenvolvedor front-end, utilizando VueJS com Vuetify e buscando sempre novos conhecimentos e aprender coisas novas. 
               v-flex(xs12 md5)              
                 v-card-title.show-content Conhecimentos
-                div.my-grid.my-grid-knowledge.show-content
-                  div.my-grid-item
-                    img(
-                      src="@/../public/images/css.png"
-                      width="50"
-                      height="50"
-                    )
-                  div.my-grid-item
+                .my-grid.my-grid-knowledge.show-content
+                  .my-grid-item
                     img(
                       src="@/../public/images/html.png"
                       width="50"
                       height="50"
                     )
-                  div.my-grid-item 
+                  .my-grid-item
+                    img(
+                      src="@/../public/images/css.png"
+                      width="50"
+                      height="50"
+                    )
+                  .my-grid-item 
                     img(
                       src="@/../public/images/js.png"
                       width="50"
                       height="50"
                     )
-                  div.my-grid-item.grid-adjust
+                  .my-grid-item.grid-adjust
                     img(
                       src="@/../public/images/vue.png"
                       width="50"
@@ -100,7 +100,7 @@ export default {
   }
   .show-content {
     opacity: 0;
-    animation: 1s ease-in opacity_transition forwards;
+    animation: opacity_transition 1s ease-in forwards;
     animation-delay: 1.5s;
   }
   @keyframes opacity_transition {

@@ -18,7 +18,7 @@
         v-flex(xs9 md10)
           h2.text-center(v-if="verifyMobile()") Um Nome Advocacia
           h3.text-center(v-else :class="!verifyMobile() ? 'mt-5' : ''") Um Nome Advocacia
-      d-menu(:menuItems="itens")
+      d-menu(:menuItems="itens" color="#000d26")
     main
       .parallax-image(
         style="background-image: url(https://images.unsplash.com/photo-1575505586569-646b2ca898fc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1505&q=80);"
@@ -52,7 +52,7 @@
           section.lawyer-extra-content
             .title-lawyer-extra-content
               h2.white--text Atuações
-            .content-lawyer-extra-content
+            .content-lawyer-extra-content(v-scroll)
               .my-grid.my-grid-lawyer
                 template(v-for="i in 3")
                   .my-grid-item-lawyer
@@ -70,7 +70,7 @@
         v-row(align="center" justify="center" style="height: 100%")
           section.lawyer-extra-content
             div.title-lawyer-extra-content
-              h2 Corpo Juridico
+              h2(style="color: #000d26") Corpo Juridico
             v-row(justify="center" align="center" style="height: 100%")
               v-card.transparent(flat :width="verifyMobile() ? 700 : 350" height="600px")
                 v-window(v-model="onboarding" reverse)
@@ -194,7 +194,33 @@ export default {
       },
     ],
   }),
+  directives: {
+    scroll: {
+      inserted: function () {
+        // const topo = window.pageYOffset+((window.innerHeight*3)/4);
+
+        window.addEventListener('scroll', function () {
+          window.alert('alo')
+          // if (topo > el.offsetTop) {
+          //   el.setAttribute(
+          //     'style',
+          //     'opacity: 1; transform: translate3d(0, -10px, 0)'
+          //   )
+ 
+          // }
+        }) 
+      }
+    }
+  },
   methods: {
+    teste(el) {
+      window.alert("alo")
+      const topo = window.pageYOffset+((window.innerHeight*3)/4);
+
+      if (topo > el.offsetTop) {
+        el.classList.add('teste');
+      }
+    },
     next () {
       this.onboarding = this.onboarding + 1 === this.length
         ? 0
@@ -211,6 +237,9 @@ export default {
 </script>
 
 <style scoped>
+  .teste {
+    color: salmon;
+  }
   .lawyerLayout {
     width: 100%;
     height: 100%;

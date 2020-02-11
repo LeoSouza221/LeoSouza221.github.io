@@ -27,6 +27,9 @@ export default {
 </script>
 
 <style>
+  .teste {
+    color: salmon;
+  }
   .background {
     background: #e9e8e8;
     width: 100%;
