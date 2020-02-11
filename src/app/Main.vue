@@ -27,6 +27,9 @@ export default {
 </script>
 
 <style>
+  .teste {
+    color: salmon;
+  }
   .background {
     background: #e9e8e8;
     width: 100%;
@@ -54,7 +57,7 @@ export default {
     left: 50%;
     transform: translateX(-50%);
     border-radius: 50%;
-    border: solid 5px #6335e2;
+    border: solid 5px #275DF6;
     background: #ffffff;
     box-shadow: 2px 2px 5px black;
     transition: all .5s ease-in;

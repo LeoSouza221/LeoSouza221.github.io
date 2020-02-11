@@ -7,8 +7,8 @@
       :height="toolbarHeight"
       width='100vw'
     )
-      div.avatar(v-if="$route.name === 'Main'")
-      div.align-navbar
+      .avatar(v-if="$route.name === 'Main'")
+      .align-navbar
         navbar
         v-spacer
         v-btn(

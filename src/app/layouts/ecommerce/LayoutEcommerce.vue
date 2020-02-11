@@ -9,6 +9,6 @@ export default {
   components: {
     InConstruction,
   },
-  name: 'LayoutFotografo',
+  name: 'LayoutEcommerce',
 }
 </script>

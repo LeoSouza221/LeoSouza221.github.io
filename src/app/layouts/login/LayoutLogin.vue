@@ -9,6 +9,6 @@ export default {
   components: {
     InConstruction,
   },
-  name: 'LayoutNutricionista',
+  name: 'LayoutLogin',
 }
 </script>

@@ -10,15 +10,6 @@
     ) 
       v-icon(dark left) fa fa-exclamation-triangle 
       span {{ text }}
-    //- v-dialog(v-model="dialog" persistent max-width="200")
-    //-   v-card(flat height="200")
-    //-     div(style=`display: flex;
-    //-       justify-content: center;
-    //-       align-items: center;
-    //-       height: 100%;
-    //-       flex-direction: column;`
-    //-     )
-    //-       img(src="@/../public/img/farol_2.svg"
 </template>
 
 <script>

@@ -1,55 +1,55 @@
 export default [
   {
-    path: '/layout',
+    path: '/portfolio',
     component: () => import('./index.vue'),
     meta: {
       sidebar: {
         icon: 'fa fa-th-large',
-        title: 'Layouts',
+        title: 'Portfolio',
       },
     },
     children: [
       {
-        path: '/layout/advogado',
-        name: 'Advocacia',
-        component: () => import('./advocacia/LayoutAdvogado.vue'),
+        path: '/portfolio/empresa',
+        name: 'Empresa',
+        component: () => import('./empresa/LayoutEmpresa.vue'),
         meta: {
           sidebar: {
             icon: 'fa fa-balance-scale',
-            title: 'Advocacia',
+            title: 'Empresa',
           },
         },
       },
       {
-        path: '/layout/nutricao',
-        name: 'Nutrição',
-        component: () => import('./nutricionista/LayoutNutricionista.vue'),
+        path: '/portfolio/login',
+        name: 'Login',
+        component: () => import('./login/LayoutLogin.vue'),
         meta: {
           sidebar: {
-            icon: 'fa fa-carrot',
-            title: 'Nutrição',
+            icon: 'fa fa-user-secret',
+            title: 'Login',
           },
         },
       },
       {
-        path: '/layout/veterinario',
-        name: 'Veterinário',
-        component: () => import('./veterinaria/LayoutVeterinario.vue'),
+        path: '/portfolio/ecommerce',
+        name: 'E-Commerce',
+        component: () => import('./ecommerce/LayoutEcommerce.vue'),
         meta: {
           sidebar: {
-            icon: 'fa fa-paw',
-            title: 'Veterinário',
+            icon: 'fa fa-comment-dollar',
+            title: 'E-Commerce',
           },
         },
       },
       {
-        path: '/layout/buffet',
-        name: 'Buffet',
-        component: () => import('./buffet/LayoutBuffet.vue'),
+        path: '/portfolio/github',
+        name: 'GitHub',
+        component: () => import('./github/LayoutGithub.vue'),
         meta: {
           sidebar: {
-            icon: 'fa fa-glass-cheers',
-            title: 'Buffet',
+            icon: 'fab fa-github',
+            title: 'Github',
           },
         },
       },
