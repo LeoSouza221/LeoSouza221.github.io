@@ -53,8 +53,8 @@
                       a(href="https://github.com/LeoSouza221" target="_blank")
                         img(
                           src="@/../public/images/git.png"
-                          width="60"
-                          height="60"
+                          width="70"
+                          height="70"
                         )
                     div.my-grid-item
                       a(href="https://www.linkedin.com/in/leonardo-de-souza-a75557156/" target="_blank")

@@ -213,7 +213,7 @@ export default {
     position: absolute;
     display: flex;
     align-items: center;
-    left: 100px;
+    left: 80px;
     color: white;
     text-shadow: 1px 1px 2px grey;
     animation: toDown .5s ease-in;
