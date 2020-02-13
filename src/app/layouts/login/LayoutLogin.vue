@@ -5,7 +5,7 @@
         src="https://images.unsplash.com/photo-1485470733090-0aae1788d5af?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1991&q=80"
         height="100%"
         width="100%"
-        gradient="to top right, rgba(3, 3, 3, 0.9), rgba(25, 25, 26, 0.7)"
+        gradient="to top right, rgba(3, 3, 3, 0.1), rgba(25, 25, 26, 0.7)"
       )
     .side-text(v-if="verifyMobile()") 
       h1 Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -23,10 +23,10 @@
       .pos-6
         .shooting-star
     v-row(align="center" justify="center" style="height: 100%")
-      v-col(cols="10" md="auto")
+      v-col(cols="10" md="auto" :offset="$vuetify.breakpoint.width > 400 ? 1 : 0")
         v-card(
           :width="verifyMobile() ? '350' : '300'"
-          color="rgba(3, 3, 3, 0.9)"
+          color="rgba(3, 3, 3, 0.1)"
         ) 
           v-tabs(
             class="elevation-2"
@@ -34,7 +34,7 @@
             centered
             grow
             height="50"
-            background-color="rgba(3, 3, 3, 0.9)"
+            background-color="rgba(3, 3, 3, 0.3)"
           )
             v-tabs-slider
             v-tab(
@@ -88,7 +88,7 @@
                       div(style="width: 100%; height: 50px; display: flex; justify-content: center")
                         a(style="font-size: 12px;") Esqueci minha senha
             v-tab-item(value="tab-Cadastro")
-              v-card.transparent(flat height="450")
+              v-card(flat height="450" color="rgba(3, 3, 3, 0.1)")
                 v-form(ref="cadastroForms" v-model="validaCadastro")
                  v-row(justify="center" no-gutters)
                     v-col.mt-5(
