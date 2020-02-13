@@ -3,8 +3,7 @@
     .fundo1
       .sol
       .montanhas
-        .montanha(v-for="(alt, index) in mont" :key="index")
-          .bloco(:style="{ top: altura(alt.alt) }")
+       
     .fundo2
       .estrada
         .sinalizacao
@@ -212,25 +211,10 @@ export default {
   .montanhas {
     width: 100vw;
     height: 150px;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: repeat(14, 1fr);
-    grid-template-rows: 1fr;
+    background: linear-gradient(rgb(133, 2, 255) 25%,rgb(19, 0, 41) 100%);
+    clip-path: polygon(0% 100%, 9% 30%, 14% 66%, 21% 34%, 28% 73%, 34% 36%, 38% 81%, 44% 41%, 49% 70%, 53% 38%, 57% 70%, 62% 37%, 69% 75%, 75% 42%, 79% 91%, 86% 43%, 93% 100%, 100% 45%, 100% 100%);
   }
-  .montanha {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    transform: rotate(45deg);
-  }
-  .bloco {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    background: linear-gradient(120deg, rgb(19, 0, 41) 25%, rgb(133, 2, 255) 100%)
-  }
+
   .fundo2 {
     position: absolute;
     bottom: 0;
@@ -280,33 +264,39 @@ export default {
     background: magenta;
     animation: caminho 2s linear infinite;
   }
+
   @keyframes caminho {
+    40%, 100% {
+      top: 100%;
+      height: 10px;
+      opacity: 0;
+    }
+    0% {
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+  }
+
+  /* @keyframes caminho {
     100% {
       top: 100%;
       height: 10px;
       opacity: 0;
     }
-  }
+  } */
+
   .linha-estrada2 {
     position: absolute;
     width: 100%;
-    top: 50%;
+    top: 0;
     height: 5px;
     background: magenta;
-    animation: caminho2 2s linear infinite;
+    animation: caminho 2s linear infinite;
+    animation-delay: 2s
   }
-  @keyframes caminho2 {
-    25% {
-      top: 100%;
-      height: 10px;
-      opacity: 0;
-    }
-    50% {
-      top: 0;
-      height: 1px;
-      opacity: 0;
-    }
-  }
+
   .linha-estrada3 {
     position: absolute;
     border-bottom: 30vh solid magenta;
@@ -342,14 +332,22 @@ export default {
     top: 0;
     background: #fff;
     z-index: 1;
-    animation: faixa 0.3s linear infinite;
+    animation: faixa 0.5s linear infinite;
   }
-  @keyframes faixa {
-    to{
+
+   @keyframes faixa {
+    40%, 100% {
       top: 60%;
       opacity: 0;
     }
+    0% {
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
   }
+
   .jogo-container {
     width: 400px;
     height: 100%;
