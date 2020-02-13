@@ -23,7 +23,11 @@
       .pos-6
         .shooting-star
     v-row(align="center" justify="center" style="height: 100%")
-      v-col(cols="10" md="auto" :offset="$vuetify.breakpoint.width > 400 ? 1 : 0")
+      v-col(
+        cols="10"
+        md="auto"
+        :offset="$vuetify.breakpoint.width > 400 && $vuetify.breakpoint.width < 500 ? 1 : 0"
+      )
         v-card(
           :width="verifyMobile() ? '350' : '300'"
           color="rgba(3, 3, 3, 0.1)"
