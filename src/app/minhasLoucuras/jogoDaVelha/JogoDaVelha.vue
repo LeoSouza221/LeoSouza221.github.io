@@ -41,50 +41,6 @@ export default {
     capeao: '',
     numeroJogada: 1,
     vez: true,
-    mont: [
-      {
-        alt: Math.floor(Math.random() * 100),
-      },
-      {
-        alt: Math.floor(Math.random() * 100),
-      },
-      {
-        alt: Math.floor(Math.random() * 100),
-      },
-      {
-        alt: Math.floor(Math.random() * 100),
-      },
-      {
-        alt: Math.floor(Math.random() * 100),
-      },
-      {
-        alt: Math.floor(Math.random() * 100),
-      },
-      {
-        alt: Math.floor(Math.random() * 100),
-      },
-      {
-        alt: Math.floor(Math.random() * 100),
-      },
-      {
-        alt: Math.floor(Math.random() * 100),
-      },
-      {
-        alt: Math.floor(Math.random() * 100),
-      },
-      {
-        alt: Math.floor(Math.random() * 100),
-      },
-      {
-        alt: Math.floor(Math.random() * 100),
-      },
-      {
-        alt: Math.floor(Math.random() * 100),
-      },
-      {
-        alt: Math.floor(Math.random() * 100),
-      },
-    ],
     itemsDoJogo: {
       X: [],
       O: [],
@@ -139,9 +95,6 @@ export default {
     ],
   }),
   methods: {
-    altura(alt) {
-      return `${40 + alt}px`;
-    },
     jogada(numero) {
       if (!this.capeao) {
         if (this.vez) {
@@ -278,14 +231,6 @@ export default {
       opacity: 1;
     }
   }
-
-  /* @keyframes caminho {
-    100% {
-      top: 100%;
-      height: 10px;
-      opacity: 0;
-    }
-  } */
 
   .linha-estrada2 {
     position: absolute;
