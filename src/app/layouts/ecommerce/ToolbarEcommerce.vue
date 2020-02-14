@@ -22,7 +22,7 @@
             v-list-item(
               v-for="(item, index) in items"
               :key="index"
-              @click=""
+              @click="changeToolbar(item)"
             )
               v-list-item-icon
                 v-icon {{ item.icon }}
@@ -50,8 +50,15 @@
 </template>
 
 <script>
+import { EventBus } from '@/app/core/event-bus';
+
 export default {
   name: 'ToolbarEcommerce',
   props: ['items'],
+  methods: {
+    changeToolbar(item) {
+      EventBus.$emit('change-toolbar-items', item);
+    }
+  }
 }
 </script>

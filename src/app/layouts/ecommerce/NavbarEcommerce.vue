@@ -4,6 +4,7 @@
     light
     color="white"
     height="calc(100% - 64px)"
+    permanent
   ) 
     div.mt-2(style="display: inline-flex")
       v-icon.mx-3(size="20") fa fa-filter
@@ -16,9 +17,9 @@
           dense
         )
           v-checkbox(v-if="item.type === 'checkbox'" :label="item.title" dense)
-          v-range-slider(
+          v-range-slider.my-2(
             v-else
-            v-model="range"
+            v-model="item.range"
             :max="item.max"
             :min="item.min"
             hide-details
@@ -26,6 +27,7 @@
           )
             template(v-slot:prepend)
               v-text-field(
+                :value="item.range[0]"
                 class="mt-0 pt-0"
                 hide-details
                 single-line
@@ -35,6 +37,7 @@
             )
             template(v-slot:append)
               v-text-field(
+                :value="item.range[1]"
                 class="mt-0 pt-0"
                 hide-details
                 single-line
@@ -49,14 +52,15 @@
         v-subheader(
           v-else-if="item.header"
           :key="item.header"
-        ) {{ item.header }}
+        ) 
+          strong {{ item.header }}
 </template>
 
 <script>
 
 export default {
   name: 'NavbarEcommerce',
-  props: ['itemsNavbar'],
+  props: ['itemsNavbar', 'drawer'],
 }
 
 </script>
