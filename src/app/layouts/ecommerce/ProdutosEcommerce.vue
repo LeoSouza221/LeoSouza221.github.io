@@ -25,7 +25,7 @@
               lg="3"
             )
               v-expand-transition
-                v-card(flat hover height="350" width="300")
+                v-card(flat hover height="350" :width="!verifyMobile() ? '100%' : 300")
                   .card-image
                     v-img(
                       :src="toolbarProducts.image"
@@ -53,10 +53,12 @@
 </template>
 
 <script>
+import isMobile from '@/mixins/isMobile';
 
 export default {
   name: 'ProdutosEcommerce',
   props: ['toolbarProducts', 'itemsProducts'],
+  mixins: [isMobile],
   data: () => ({
     page: 1,
     itemsPerPage: 8,
@@ -80,7 +82,7 @@ export default {
 <style scoped>
   main {
     position: absolute;
-    top: 74px;
+    top: 128px;
     right: 10px;
     width: calc(100% - 300px);
     height: 110%;
@@ -91,5 +93,13 @@ export default {
     height: calc(120px + 15px);
     margin: 0 auto;
     padding-top: 15px;
+  }
+
+  @media (max-width: 600px) {
+    main {
+      right: none;
+      width: calc(100% - 20px);
+      margin: 0 auto;
+    }
   }
 </style>

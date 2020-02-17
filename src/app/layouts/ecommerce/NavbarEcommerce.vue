@@ -1,10 +1,11 @@
 <template lang="pug">
   v-navigation-drawer(
-    v-model="drawer"
+    v-model="navSlide"
     light
     color="transparent"
     height="calc(100% - 64px)"
-    permanent
+    absolute
+    temporary
   ) 
     div.mt-2(style="display: inline-flex")
       v-icon.mx-3(size="20") fa fa-filter
@@ -61,8 +62,15 @@
 export default {
   name: 'NavbarEcommerce',
   props: ['itemsNavbar', 'drawer'],
+  data: () => ({
+    navSlide: false,
+  }),
+  watch: {
+    drawer() {
+      this.navSlide = this.drawer;
+    }
+  }
 }
-
 </script>
 
 <style scoped>
