@@ -2,7 +2,9 @@ language: node_js
 node_js:
  - "node"
 
-cache: npm
+cache:  
+  directories:
+    - node_modules
 
 script: npm run build
 
@@ -12,4 +14,4 @@ deploy:
  github_token: $GITHUB_TOKEN
  local_dir: dist
  on:
-   branch: master
+   branch: gh-pages
