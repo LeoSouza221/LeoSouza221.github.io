@@ -2,7 +2,7 @@
   v-navigation-drawer(
     v-model="drawer"
     light
-    color="white"
+    color="transparent"
     height="calc(100% - 64px)"
     permanent
   ) 

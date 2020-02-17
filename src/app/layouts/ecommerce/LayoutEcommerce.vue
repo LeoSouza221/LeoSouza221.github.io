@@ -55,7 +55,7 @@ export default {
         title: 'Eletrodomesticos',
         icon: 'fa fa-plug',
         color: '#FFEB3B',
-        image: 'https://cdn.onlinewebfonts.com/svg/img_153851.png'
+        image: 'https://c7.uihere.com/icons/125/332/30/household-appliances-67aaca748fc25b34f09f7988b3a7e90e.png'
       },
     ],
     itemsNavbar: [

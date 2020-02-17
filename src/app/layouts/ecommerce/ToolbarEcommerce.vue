@@ -39,11 +39,15 @@
               v-avatar.mr-4(v-on="on" style="border: solid 1px grey; border-radius: 50%; cursor: pointer")
                 v-icon fa fa-user
             v-list
-              v-list-item
+              v-list-item(
+                @click=""
+              )
                 v-list-item-icon
                   v-icon far fa-user
                 v-list-item-title Perfil
-              v-list-item
+              v-list-item(
+                @click=""
+              )
                 v-list-item-icon
                   v-icon fas fa-sign-out-alt
                 v-list-item-title Sair
