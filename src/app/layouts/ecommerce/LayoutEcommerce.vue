@@ -4,7 +4,10 @@
       Toolbar(:items="items")
       Navbar(
         :itemsNavbar="itemsNavbar"
-        :drawer="drawer"
+        v-if="verifyMobile()"
+      )
+      CardFilters(
+        :itemsNavbar="itemsNavbar"
       )
       Produtos(
         :toolbarProducts="toolbarProducts"
@@ -14,9 +17,11 @@
   
 <script>
 import { EventBus } from '@/app/core/event-bus';
+import isMobile from '@/mixins/isMobile';
 import Toolbar from './ToolbarEcommerce';
 import Navbar from './NavbarEcommerce';
 import Produtos from './ProdutosEcommerce';
+import CardFilters from './CardFilterEcommerce';
 
 export default {
   name: 'LayoutEcommerce',
@@ -24,7 +29,9 @@ export default {
     Toolbar,
     Navbar,
     Produtos,
+    CardFilters,
   },
+  mixins: [isMobile],
   data: () => ({
     drawer: true,
     toolbarProducts: {
@@ -176,8 +183,7 @@ export default {
 
       this.toolbarProducts = item;
     }
-  }
-
+  },
 }
 </script>
 
