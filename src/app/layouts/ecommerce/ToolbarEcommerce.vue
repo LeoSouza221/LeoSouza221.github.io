@@ -13,7 +13,7 @@
         absolute
         left
         v-if="!verifyMobile()"
-        @click="openNav"
+        @click="openFilter"
       )
         v-icon(size="20") fa fa-filter
       v-icon.mr-3 fa fa-store
@@ -91,9 +91,8 @@ export default {
     changeToolbar(item) {
       EventBus.$emit('change-toolbar-items', item);
     },
-    openNav() {
-      this.drawer = !this.drawer;
-      EventBus.$emit('change-navbar', this.drawer);
+    openFilter() {
+      EventBus.$emit('open-filters');
     }
   }
 }

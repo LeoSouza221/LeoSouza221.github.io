@@ -86,6 +86,7 @@ export default {
     right: 10px;
     width: calc(100% - 300px);
     height: 110%;
+    z-index: 0;
   }
 
   .card-image {

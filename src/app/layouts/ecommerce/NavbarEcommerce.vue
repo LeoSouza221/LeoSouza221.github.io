@@ -4,8 +4,6 @@
     light
     color="transparent"
     height="calc(100% - 64px)"
-    absolute
-    temporary
   ) 
     div.mt-2(style="display: inline-flex")
       v-icon.mx-3(size="20") fa fa-filter
@@ -61,15 +59,10 @@
 
 export default {
   name: 'NavbarEcommerce',
-  props: ['itemsNavbar', 'drawer'],
+  props: ['itemsNavbar'],
   data: () => ({
-    navSlide: false,
+    navSlide: true,
   }),
-  watch: {
-    drawer() {
-      this.navSlide = this.drawer;
-    }
-  }
 }
 </script>
 
