@@ -20,6 +20,17 @@ export default [
           },
         },
       },
+      {
+        path: '/outros/desenho',
+        name: 'Desenho',
+        component: () => import('./desenho/Anime.vue'),
+        meta: {
+          sidebar: {
+            icon: 'fa fa-paint-brush',
+            title: 'Desenho',
+          },
+        },
+      },
     ],
   },
 ];
