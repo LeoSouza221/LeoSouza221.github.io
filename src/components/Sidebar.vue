@@ -40,8 +40,8 @@
 </template>
 
 <script>
-import { EventBus } from '@/app/core/event-bus';
-import routes from '../../router/routes';
+import { EventBus } from '@/utils/event-bus';
+import routes from '@/router/routes';
 
 export default {
   data: () => ({

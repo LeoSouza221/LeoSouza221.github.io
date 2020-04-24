@@ -3,17 +3,17 @@
     sidebar
     toolbar
     v-content(style="height: 100%; width: 100%")
-      main-content(v-if="$route.name === 'Main'")
+      main-content(v-if="$route.name === 'Home'")
       v-slide-y-transition(mode="out-in")
         router-view
     main-footer
 </template>
 
 <script>
-import MainContent from './core/MainContent.vue';
-import Toolbar from './core/Toolbar.vue';
-import Sidebar from './core/Sidebar.vue';
-import MainFooter from './core/MainFooter.vue';
+import MainContent from '@/components/MainContent.vue';
+import Toolbar from '@/components/Toolbar.vue';
+import Sidebar from '@/components/Sidebar.vue';
+import MainFooter from '@/components/MainFooter.vue';
 
 export default {
   components: {
@@ -22,7 +22,7 @@ export default {
     Sidebar,
     MainFooter,
   },
-  name: 'Main',
+  name: 'Home',
 }
 </script>
 
