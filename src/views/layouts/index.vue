@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import Pagina from '@/app/core/Pagina.vue';
+import Pagina from '@/components/Pagina.vue';
 
 export default {
   components: {

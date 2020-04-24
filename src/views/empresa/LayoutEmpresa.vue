@@ -55,7 +55,7 @@
             .content-lawyer-extra-content(v-scroll)
               .my-grid.my-grid-lawyer
                 template(v-for="i in 3")
-                  .my-grid-item-lawyer
+                  .my-grid-item-lawyer(v-scrollanimation)
                     .avatar-grid
                       v-avatar(dark size="60" style="border: solid 2px white; border-radius: 50%;")
                         v-icon(large style="color: #fff;") fa fa-balance-scale
@@ -138,10 +138,10 @@
 </template>
 
 <script>
-import Pagina from '@/app/core/Pagina.vue';
-import DefaultMenu from '@/app/models/DefaultMenuItens.vue';
-import DefaultForm from '@/app/models/DefaultForm.vue';
-import DefaultMap from '@/app/models/DefaultMap.vue';
+import Pagina from '@/components/Pagina.vue';
+import DefaultMenu from '@/components/DefaultMenuItens.vue';
+import DefaultForm from '@/components/DefaultForm.vue';
+import DefaultMap from '@/components/DefaultMap.vue';
 import isMobile from '@/mixins/isMobile';
 
 export default {
@@ -194,24 +194,6 @@ export default {
       },
     ],
   }),
-  directives: {
-    scroll: {
-      inserted: function () {
-        // const topo = window.pageYOffset+((window.innerHeight*3)/4);
-
-        window.addEventListener('scroll', function () {
-          window.alert('alo')
-          // if (topo > el.offsetTop) {
-          //   el.setAttribute(
-          //     'style',
-          //     'opacity: 1; transform: translate3d(0, -10px, 0)'
-          //   )
- 
-          // }
-        }) 
-      }
-    }
-  },
   methods: {
     teste(el) {
       window.alert("alo")
@@ -237,9 +219,17 @@ export default {
 </script>
 
 <style scoped>
-  .teste {
-    color: salmon;
+  .before-enter {
+    opacity: 0;
+    transform: translateX(-150px);
+    transition: all 2s ease-out;
   }
+
+  .enter {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   .lawyerLayout {
     width: 100%;
     height: 100%;

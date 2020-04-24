@@ -12,7 +12,7 @@ export default [
       {
         path: '/portfolio/empresa',
         name: 'Empresa',
-        component: () => import('./empresa/LayoutEmpresa.vue'),
+        component: () => import('../empresa/LayoutEmpresa.vue'),
         meta: {
           sidebar: {
             icon: 'fa fa-balance-scale',
@@ -23,7 +23,7 @@ export default [
       {
         path: '/portfolio/login',
         name: 'Login',
-        component: () => import('./login/LayoutLogin.vue'),
+        component: () => import('../login/LayoutLogin.vue'),
         meta: {
           sidebar: {
             icon: 'fa fa-user-secret',
@@ -34,7 +34,7 @@ export default [
       {
         path: '/portfolio/ecommerce',
         name: 'E-Commerce',
-        component: () => import('./ecommerce/LayoutEcommerce.vue'),
+        component: () => import('../ecommerce/LayoutEcommerce.vue'),
         meta: {
           sidebar: {
             icon: 'fa fa-comment-dollar',
@@ -45,11 +45,45 @@ export default [
       {
         path: '/portfolio/github',
         name: 'GitHub',
-        component: () => import('./github/LayoutGithub.vue'),
+        component: () => import('../github/LayoutGithub.vue'),
         meta: {
           sidebar: {
             icon: 'fab fa-github',
             title: 'Github',
+          },
+        },
+      },
+    ],
+  },
+  {
+    path: '/outros',
+    component: () => import('./index.vue'),
+    meta: {
+      sidebar: {
+        icon: 'fa fa-comment-dots',
+        title: 'Outros',
+      },
+    },
+    children: [
+      {
+        path: '/outros/jogo-da-velha',
+        name: 'Jogo Da Velha',
+        component: () => import('../jogoDaVelha/JogoDaVelha.vue'),
+        meta: {
+          sidebar: {
+            icon: 'fa fa-dice',
+            title: 'Jogo Da Velha',
+          },
+        },
+      },
+      {
+        path: '/outros/desenho',
+        name: 'Desenho',
+        component: () => import('../desenho/Anime.vue'),
+        meta: {
+          sidebar: {
+            icon: 'fa fa-paint-brush',
+            title: 'Desenho',
           },
         },
       },

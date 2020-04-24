@@ -7,7 +7,7 @@
       :height="toolbarHeight"
       width='100vw'
     )
-      .avatar(v-if="$route.name === 'Main'")
+      .avatar(v-if="$route.name === 'Home'")
       .align-navbar
         navbar
         v-spacer
@@ -15,7 +15,7 @@
           icon
           to="/"
           dark
-          v-if="$route.name !== 'Main'"
+          v-if="$route.name !== 'Home'"
         )
           v-icon fa fa-home
 </template>
@@ -31,10 +31,10 @@ export default {
   },
   computed: {
     toolbarHeight() {
-      if (this.verifyMobile() && this.$route.name === 'Main') {
+      if (this.verifyMobile() && this.$route.name === 'Home') {
         return '150px';
-      } else if ((this.verifyMobile() && this.$route.name !== 'Main') || 
-        (!this.verifyMobile() && this.$route.name !== 'Main')) {
+      } else if ((this.verifyMobile() && this.$route.name !== 'Home') || 
+        (!this.verifyMobile() && this.$route.name !== 'Home')) {
         return '50px';
       } else {
         return '100px';

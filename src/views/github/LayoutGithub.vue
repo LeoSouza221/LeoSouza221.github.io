@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import InConstruction from '@/app/models/DefaultInConstruction.vue';
+import InConstruction from '@/components/DefaultInConstruction.vue';
 
 export default {
   components: {

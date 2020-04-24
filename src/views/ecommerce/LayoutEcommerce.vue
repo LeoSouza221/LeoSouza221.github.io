@@ -16,7 +16,7 @@
 </template>
   
 <script>
-import { EventBus } from '@/app/core/event-bus';
+import { EventBus } from '@/utils/event-bus';
 import isMobile from '@/mixins/isMobile';
 import Toolbar from './ToolbarEcommerce';
 import Navbar from './NavbarEcommerce';

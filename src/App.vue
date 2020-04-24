@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { EventBus } from '@/app/core/event-bus';
+import { EventBus } from '@/utils/event-bus';
 
 export default {
   data: () => ({

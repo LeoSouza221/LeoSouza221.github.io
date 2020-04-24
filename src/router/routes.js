@@ -1,5 +1,5 @@
 const routes = [];
-const files = require.context('@/app/', true, /Router.js$/);
+const files = require.context('@/views/', true, /Router.js$/);
 
 files.keys().forEach((fileName) => {
   const content = files(fileName).default;
