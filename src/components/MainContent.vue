@@ -1,24 +1,24 @@
 <template lang="pug">
   .mainContent
-    v-container(style="height: 100%;")
-      v-layout(justify-center row wrap align-center fill-height)
-        v-flex(xs11 md12)
+    v-container(style="height: 100%; display: flex; align-items: center")
+      v-row(justify="center" align-self="center")
+        v-col(cols="11" sm="10" md="10" lg="8")
           v-card.slide(
             dark
             flat 
             :style=`
               verifyMobile() ? 
               'background: linear-gradient(140deg, #275DF6 60%, white 40%)' : 
-              'background: linear-gradient(180deg, #275DF6 0, #6335e2 59%, white 59%, white 80%, #6335e2 80%, #6335e2 100%)'
+              'background: linear-gradient(rgb(39, 93, 246) 0px, rgb(99, 53, 226) 59%, white 59%, white 75%, rgb(88, 36, 230) 75%, rgb(99, 53, 226) 100%)'
             `
           )
-            v-layout.ma-3(justify-center row wrap)
-              v-flex(xs12 md7)
+            v-row.ma-3(justify="center")
+              v-col(cols="12" md="7")
                 v-card-title.show-content Apresentação
-                v-layout(justify-center wrap)
+                v-row(justify-center wrap)
                   p.text-adjust.white--text.show-content &nbsp; Olá, me chamo Leonardo, sou formado em Análise e Desenvolvimento de Sistemas desde o começo de 2019. Já fui estagiário de BI por cerca de um ano e meio, onde era responsável por criar os dashboards e aplicar as métricas pré definidas.
                   p.text-adjust.white--text.show-content Atualmente trabalho como desenvolvedor front-end, utilizando VueJS com Vuetify e buscando sempre novos conhecimentos e aprender coisas novas. 
-              v-flex(xs12 md5)              
+              v-col(cols="12" md="5")              
                 v-card-title.show-content Conhecimentos
                 .my-grid.my-grid-knowledge.show-content
                   .my-grid-item
@@ -45,7 +45,7 @@
                       width="50"
                       height="50"
                     )
-              v-flex(xs12)
+              v-col(cols="12")
                 v-card-title.show-content Contatos e Referências
                 div.contacts-container.show-content
                   div.my-grid.my-grid-contacts
