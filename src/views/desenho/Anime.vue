@@ -252,7 +252,7 @@
     background-color: rgb(15, 15, 15);
     border-radius: 50% 0 50% 0;
     transform: rotate(20deg);
-    box-shadow: inset 7px 0 15px rgb(112, 112, 112), inset 0 7px 12px rgb(179, 179, 179);
+    box-shadow: inset 7px 0 15px rgb(112, 112, 112), inset 0 0px 5px rgb(94, 94, 94);
   }
 
   .olho-esquerdo {
@@ -263,7 +263,7 @@
     background-color: rgb(15, 15, 15);
     border-radius: 0 50% 0 50%;
     transform: rotate(-20deg);
-    box-shadow: inset -7px 0 15px rgb(112, 112, 112), inset 0 7px 12px rgb(179, 179, 179);
+    box-shadow: inset 7px 0 15px rgb(112, 112, 112), inset 0 0px 5px rgb(94, 94, 94);
   }
 
   .iris {
