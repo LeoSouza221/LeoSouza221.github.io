@@ -2,67 +2,78 @@
   .mainContent
     v-container(style="height: 100%; display: flex; align-items: center")
       v-row(justify="center" align-self="center")
-        v-col(cols="11" sm="10" md="10" lg="8")
-          v-card.slide(
-            dark
-            flat 
-            :style=`
-              verifyMobile() ? 
-              'background: linear-gradient(140deg, #275DF6 60%, white 40%)' : 
-              'background: linear-gradient(rgb(39, 93, 246) 0px, rgb(99, 53, 226) 59%, white 59%, white 75%, rgb(88, 36, 230) 75%, rgb(99, 53, 226) 100%)'
-            `
-          )
-            v-row.ma-3(justify="center")
-              v-col(cols="12" md="7")
-                v-card-title.show-content Apresentação
-                v-row(justify-center wrap)
-                  p.text-adjust.white--text.show-content &nbsp; Olá, me chamo Leonardo, sou formado em Análise e Desenvolvimento de Sistemas desde o começo de 2019. Já fui estagiário de BI por cerca de um ano e meio, onde era responsável por criar os dashboards e aplicar as métricas pré definidas.
-                  p.text-adjust.white--text.show-content Atualmente trabalho como desenvolvedor front-end, utilizando VueJS com Vuetify e buscando sempre novos conhecimentos e aprender coisas novas. 
-              v-col(cols="12" md="5")              
-                v-card-title.show-content Conhecimentos
-                .my-grid.my-grid-knowledge.show-content
-                  .my-grid-item
-                    img(
-                      src="@/../public/images/html.png"
-                      width="50"
-                      height="50"
+        v-col(cols="11" sm="8" md="8" lg="6")
+          v-card.elevation-12
+            v-toolbar.down-toolbar.secondary(dark flat tile)
+              v-row(justify="space-around")
+                v-icon fab fa-js
+                h3 Desenvolder Front-End
+                v-icon fab fa-vuejs
+            v-card-text
+              v-row(justify="center" style="margin-top: 70px")
+                v-col(cols="12" sm="12" md="3")
+                  .avatar-align
+                    v-avatar(
+                      class="profile"
+                      color="grey"
+                      tile
+                      width="120"
+                      height="150"
                     )
-                  .my-grid-item
-                    img(
-                      src="@/../public/images/css.png"
-                      width="50"
-                      height="50"
-                    )
-                  .my-grid-item 
-                    img(
-                      src="@/../public/images/js.png"
-                      width="50"
-                      height="50"
-                    )
-                  .my-grid-item.grid-adjust
-                    img(
-                      src="@/../public/images/vue.png"
-                      width="50"
-                      height="50"
-                    )
-              v-col(cols="12")
-                v-card-title.show-content Contatos e Referências
-                div.contacts-container.show-content
-                  div.my-grid.my-grid-contacts
-                    div.my-grid-item
-                      a(href="https://github.com/LeoSouza221" target="_blank")
-                        img(
-                          src="@/../public/images/git.png"
-                          width="70"
-                          height="70"
-                        )
-                    div.my-grid-item
-                      a(href="https://www.linkedin.com/in/leonardo-de-souza-a75557156/" target="_blank")
-                        img(
-                          src="@/../public/images/linkedin.png"
-                          width="60"
-                          height="60"
-                        )
+                      v-img(:src="require('@/../public/images/eu.jpeg')")
+                v-col(cols="12" sm="12" md="9")
+                  fieldset
+                    legend.show-content Nome
+                    p.text-adjust.show-content Leonardo Felipe de Souza
+                  fieldset.mt-3
+                    legend.show-content Apresentação
+                    p.text-adjust.show-content Formado em Análise e Desenvolvimento de Sistemas desde o começo de 2019, buscando sempre novos conhecimentos.
+                //- v-col(cols="12" md="5")              
+                //-   v-card-title.show-content Conhecimentos
+                //-   .my-grid.my-grid-knowledge.show-content
+                //-     .my-grid-item
+                //-       img(
+                //-         src="@/../public/images/html.png"
+                //-         width="50"
+                //-         height="50"
+                //-       )
+                //-     .my-grid-item
+                //-       img(
+                //-         src="@/../public/images/css.png"
+                //-         width="50"
+                //-         height="50"
+                //-       )
+                //-     .my-grid-item 
+                //-       img(
+                //-         src="@/../public/images/js.png"
+                //-         width="50"
+                //-         height="50"
+                //-       )
+                //-     .my-grid-item.grid-adjust
+                //-       img(
+                //-         src="@/../public/images/vue.png"
+                //-         width="50"
+                //-         height="50"
+                //-       )
+                v-col(cols="12")
+                  fieldset
+                    legend.show-content Contatos e Referências
+                    div.contacts-container.show-content
+                      div.my-grid.my-grid-contacts
+                        div.my-grid-item
+                          a(href="https://github.com/LeoSouza221" target="_blank")
+                            img(
+                              src="@/../public/images/git.png"
+                              width="70"
+                              height="70"
+                            )
+                        div.my-grid-item
+                          a(href="https://www.linkedin.com/in/leonardo-de-souza-a75557156/" target="_blank")
+                            img(
+                              src="@/../public/images/linkedin.png"
+                              width="60"
+                              height="60"
+                            )
 </template>
 
 <script>
@@ -77,32 +88,44 @@ export default {
 <style>
   .mainContent {
     height: 100%;
+    font-family: 'Montserrat', sans-serif;
   }
+
+  fieldset {
+    padding: 10px;
+  }
+
+  fieldset legend{
+    font-size: 12px;
+  }
+
+  .avatar-align {
+    display: flex;
+    justify-content: center;
+  }
+
   .contacts-container {
     display: flex;
     justify-content: center;
   }
+
   .grid-adjust {
     grid-column-start: 2;
   }
-  .slide {
-    animation: 1s ease-out 0s 1 slide_transition;
+
+  .down-toolbar {
+    position: absolute;
+    width: 100%;
+    top: 20px;
+    border-radius: unset !important;
   }
-  @keyframes slide_transition {
-    0% {
-      opacity: 0;
-      transform: translateX(-50%);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
+
   .show-content {
     opacity: 0;
     animation: opacity_transition 1s ease-in forwards;
-    animation-delay: 1.5s;
+    animation-delay: 1s;
   }
+
   @keyframes opacity_transition {
     0% {
       opacity: 0;
@@ -111,6 +134,7 @@ export default {
       opacity: 1;
     }
   }
+
   .text-adjust {
     text-align: justify;
     padding: 0 15px;
