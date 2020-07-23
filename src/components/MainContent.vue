@@ -1,79 +1,89 @@
 <template lang="pug">
   .mainContent
-    v-container(style="height: 100%; display: flex; align-items: center")
-      v-row(justify="center" align-self="center")
-        v-col(cols="11" sm="8" md="8" lg="6")
-          v-card.elevation-12
-            v-toolbar.down-toolbar.secondary(dark flat tile)
-              v-row(justify="space-around")
-                v-icon fab fa-js
-                h3 Desenvolder Front-End
-                v-icon fab fa-vuejs
-            v-card-text
-              v-row(justify="center" style="margin-top: 70px")
-                v-col(cols="12" sm="12" md="3")
-                  .avatar-align
-                    v-avatar(
-                      class="profile"
-                      color="grey"
-                      tile
-                      width="120"
-                      height="150"
-                    )
-                      v-img(:src="require('@/../public/images/eu.jpeg')")
-                v-col(cols="12" sm="12" md="9")
-                  fieldset
-                    legend.show-content Nome
-                    p.text-adjust.show-content Leonardo Felipe de Souza
-                  fieldset.mt-3
-                    legend.show-content Apresentação
-                    p.text-adjust.show-content Formado em Análise e Desenvolvimento de Sistemas desde o começo de 2019, buscando sempre novos conhecimentos.
-                //- v-col(cols="12" md="5")              
-                //-   v-card-title.show-content Conhecimentos
-                //-   .my-grid.my-grid-knowledge.show-content
-                //-     .my-grid-item
-                //-       img(
-                //-         src="@/../public/images/html.png"
-                //-         width="50"
-                //-         height="50"
-                //-       )
-                //-     .my-grid-item
-                //-       img(
-                //-         src="@/../public/images/css.png"
-                //-         width="50"
-                //-         height="50"
-                //-       )
-                //-     .my-grid-item 
-                //-       img(
-                //-         src="@/../public/images/js.png"
-                //-         width="50"
-                //-         height="50"
-                //-       )
-                //-     .my-grid-item.grid-adjust
-                //-       img(
-                //-         src="@/../public/images/vue.png"
-                //-         width="50"
-                //-         height="50"
-                //-       )
-                v-col(cols="12")
-                  fieldset
-                    legend.show-content Contatos e Referências
-                    div.contacts-container.show-content
-                      div.my-grid.my-grid-contacts
-                        div.my-grid-item
-                          a(href="https://github.com/LeoSouza221" target="_blank")
-                            img(
-                              src="@/../public/images/git.png"
-                              width="70"
-                              height="70"
-                            )
-                        div.my-grid-item
-                          a(href="https://www.linkedin.com/in/leonardo-de-souza-a75557156/" target="_blank")
-                            img(
-                              src="@/../public/images/linkedin.png"
-                              width="60"
-                              height="60"
-                            )
+    v-container(fill-height)
+      input(type="checkbox" id="switch")
+      label.checkbox-icon(for="switch")
+        v-icon fas fa-sync-alt
+      v-row(justify="center" class="flip-container")
+        v-col(cols="11" sm="8" md="8" lg="6" class="flipper")
+          .flip-front
+            v-card.elevation-12(max-height="500" max-width="600")
+              v-toolbar.down-toolbar.secondary(dark flat tile)
+                v-row(justify="space-around")
+                  v-icon fab fa-js
+                  h3 Desenvolder Front-End
+                  v-icon fab fa-vuejs
+              v-card-text
+                v-row(justify="center" style="margin-top: 70px")
+                  v-col(cols="12" sm="12" md="3")
+                    .avatar-align
+                      v-avatar(
+                        class="profile"
+                        color="grey"
+                        tile
+                        width="120"
+                        height="150"
+                      )
+                        v-img(:src="require('@/../public/images/eu.jpeg')")
+                  v-col(cols="12" sm="12" md="9")
+                    fieldset
+                      legend.show-content Nome
+                      p.text-adjust.show-content Leonardo Felipe de Souza
+                    fieldset.mt-3
+                      legend.show-content Apresentação
+                      p.text-adjust.show-content Formado em Análise e Desenvolvimento de Sistemas desde o começo de 2019, buscando sempre novos conhecimentos.
+                  v-col(cols="12")
+                    fieldset
+                      legend.show-content Contatos e Referências
+                      div.contacts-container.show-content
+                        div.my-grid.my-grid-contacts
+                          div.my-grid-item
+                            a(href="https://github.com/LeoSouza221" target="_blank")
+                              img(
+                                src="@/../public/images/git.png"
+                                width="70"
+                                height="70"
+                              )
+                          div.my-grid-item
+                            a(href="https://www.linkedin.com/in/leonardo-de-souza-a75557156/" target="_blank")
+                              img(
+                                src="@/../public/images/linkedin.png"
+                                width="60"
+                                height="60"
+                              )
+          .flip-back
+            v-card.elevation-12(height="500" width="600")
+              v-toolbar.down-toolbar.secondary(dark flat tile)
+              v-card-text
+                v-row(justify="center" style="margin-top: 70px")
+                  v-col(cols="12")        
+                    fieldset
+                      legend.show-content Contatos e Referências
+                      .my-grid.my-grid-knowledge.show-content
+                        .my-grid-item
+                          img(
+                            src="@/../public/images/html.png"
+                            width="50"
+                            height="50"
+                          )
+                        .my-grid-item
+                          img(
+                            src="@/../public/images/css.png"
+                            width="50"
+                            height="50"
+                          )
+                        .my-grid-item 
+                          img(
+                            src="@/../public/images/js.png"
+                            width="50"
+                            height="50"
+                          )
+                        .my-grid-item.grid-adjust
+                          img(
+                            src="@/../public/images/vue.png"
+                            width="50"
+                            height="50"
+                          )
 </template>
 
 <script>
@@ -88,6 +98,7 @@ export default {
 <style>
   .mainContent {
     height: 100%;
+    padding: 64px 0 0 0;
     font-family: 'Montserrat', sans-serif;
   }
 
@@ -138,5 +149,50 @@ export default {
   .text-adjust {
     text-align: justify;
     padding: 0 15px;
+  }
+
+  .flip-container {
+    perspective: 1000px;
+    width: 100%;
+    height: 100%;
+  }
+
+  .flipper{
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    position: relative;
+  }
+
+  #switch:checked ~ .flip-container .flipper {
+    transform: rotateY(180deg);
+  }
+
+  .flip-front, .flip-back{
+    position: absolute;
+    width: 600px;
+    height: 500px;
+    backface-visibility: hidden;
+    margin: 30px;
+  }
+
+  .flip-back {
+    transform: rotateY(180deg);
+  }
+
+  #switch{
+    display: none;
+  }
+
+  .checkbox-icon {
+    position: absolute;
+    top: 64px;
+    left: 50%;
+    z-index: 2;
+  }
+
+  .checkbox-icon:hover {
+    cursor: pointer;
   }
 </style>

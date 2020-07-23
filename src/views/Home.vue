@@ -2,44 +2,21 @@
   .main-page.background
     sidebar
     toolbar
-    v-content(
-      :style=`{
-        height: teste(),
-        width: '100%'}`
-    )
-      main-content(v-if="$route.name === 'Home'")
-      v-slide-y-transition(mode="out-in")
-        router-view
+    main-content(v-if="$route.name === 'Home'")
+    v-slide-y-transition(mode="out-in" v-else)
+      router-view
     main-footer
-    v-speed-dial(
-      v-model="fab"
+    v-btn.primary(
+      dark
+      small
+      fixed
       bottom
       right
-      transition
+      fab
+      v-if="$route.name !== 'Home'"
+      to="/"
     )
-      template(v-slot:activator)
-        v-btn(
-          v-model="fab"
-          color="blue darken-2"
-          dark
-          fab
-        )
-          v-icon(v-if="fab") mdi-close
-          v-icon(v-else) mdi-account-circle
-      v-btn(
-        fab
-        dark
-        small
-        color="green"
-      )
-        v-icon mdi-pencil
-      v-btn(
-        fab
-        dark
-        small
-        color="indigo"
-      )
-        v-icon mdi-plus
+      v-icon fa fa-home
 </template>
 
 <script>
@@ -63,9 +40,7 @@ export default {
   }),
 
   methods: {
-    teste() {
-      return this.$route.name === 'Home' && this.$vuetify.breakpoint.width < 800 ? '130%' : '100%';
-    },
+  
   },
 };
 </script>

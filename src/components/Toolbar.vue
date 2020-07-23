@@ -7,14 +7,6 @@
       width='100vw'
     )
       navbar
-      v-spacer
-      v-btn(
-        icon
-        to="/"
-        dark
-        v-if="$route.name !== 'Home'"
-      )
-        v-icon fa fa-home
 </template>
 
 <script>
