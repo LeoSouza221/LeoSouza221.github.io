@@ -7,7 +7,7 @@
       v-row(justify="center" class="flip-container")
         v-col(cols="11" sm="8" md="8" lg="6" class="flipper")
           .flip-front
-            v-card.elevation-12(max-height="500" max-width="600")
+            v-card.elevation-12
               v-toolbar.down-toolbar.secondary(dark flat tile)
                 v-row(justify="space-around")
                   v-icon fab fa-js
@@ -52,7 +52,7 @@
                                 height="60"
                               )
           .flip-back
-            v-card.elevation-12(height="500" width="600")
+            v-card.elevation-12
               v-toolbar.down-toolbar.secondary(dark flat tile)
               v-card-text
                 v-row(justify="center" style="margin-top: 70px")
@@ -158,7 +158,7 @@ export default {
   }
 
   .flipper{
-    width: 100%;
+    width: 600px;
     height: 100%;
     transform-style: preserve-3d;
     transition: transform 0.8s;
@@ -171,8 +171,7 @@ export default {
 
   .flip-front, .flip-back{
     position: absolute;
-    width: 600px;
-    height: 500px;
+    width: calc(100% - 60px);
     backface-visibility: hidden;
     margin: 30px;
   }
