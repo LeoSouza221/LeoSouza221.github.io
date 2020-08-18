@@ -2,11 +2,21 @@
   .main-page.background
     sidebar
     toolbar
-    v-content(style="height: 100%; width: 100%")
-      main-content(v-if="$route.name === 'Home'")
-      v-slide-y-transition(mode="out-in")
-        router-view
+    main-content(v-if="$route.name === 'Home'")
+    v-slide-y-transition(mode="out-in" v-else)
+      router-view
     main-footer
+    v-btn.primary(
+      dark
+      small
+      fixed
+      bottom
+      right
+      fab
+      v-if="$route.name !== 'Home'"
+      to="/"
+    )
+      v-icon fa fa-home
 </template>
 
 <script>
@@ -16,28 +26,36 @@ import Sidebar from '@/components/Sidebar.vue';
 import MainFooter from '@/components/MainFooter.vue';
 
 export default {
+  name: 'Home',
+
   components: {
     MainContent,
     Toolbar,
     Sidebar,
     MainFooter,
   },
-  name: 'Home',
-}
+
+  data: () => ({
+    fab: false,
+  }),
+
+  methods: {
+  
+  },
+};
 </script>
 
 <style>
-  .teste {
-    color: salmon;
-  }
   .background {
-    background: #e9e8e8;
     width: 100%;
     height: 100%;
+    background-image: radial-gradient(
+      circle at top left,
+      #00BCD4 40%,
+      #fff 40%
+    );
   }
-  .default-background {
-    background: #6335e2;
-  }
+
   .default-container {
     height: 100vh;
     width: 100%;
@@ -47,20 +65,6 @@ export default {
     background-blend-mode: multiply;
     background-size: cover;
     background-position: center;
-  }
-  .avatar {
-    position: absolute;
-    bottom: -35%;
-    height: 130px;
-    width: 130px;
-    margin: auto;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 50%;
-    border: solid 5px #275DF6;
-    background: #ffffff;
-    box-shadow: 2px 2px 5px black;
-    transition: all .5s ease-in;
   }
   .align-navbar {
     width: 85%;

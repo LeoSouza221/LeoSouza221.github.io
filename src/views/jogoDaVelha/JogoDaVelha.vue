@@ -3,7 +3,6 @@
     .fundo1
       .sol
       .montanhas
-       
     .fundo2
       .estrada
         .sinalizacao
@@ -11,7 +10,6 @@
       .linha-estrada2
     .linhazinha
     .jogo-titulo
-      
       .triangulo1
       .triangulo2
       .titulo
