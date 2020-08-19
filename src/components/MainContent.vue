@@ -1,5 +1,5 @@
 <template lang="pug">
-  .mainContent
+  .mainContent.background
     v-container(fill-height)
       input(type="checkbox" id="switch")
       v-row(justify="center" class="flip-container")
@@ -94,6 +94,16 @@ export default {
 </script>
 
 <style>
+  .background {
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(
+      circle at top left,
+      #00BCD4 40%,
+      #fff 40%
+    );
+  }
+
   .mainContent {
     height: 100%;
     padding: 64px 0 0 0;

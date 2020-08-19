@@ -1,5 +1,5 @@
 <template lang="pug">
-  .main-page.background
+  .main-page
     sidebar
     toolbar
     main-content(v-if="$route.name === 'Home'")
@@ -46,16 +46,6 @@ export default {
 </script>
 
 <style>
-  .background {
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(
-      circle at top left,
-      #00BCD4 40%,
-      #fff 40%
-    );
-  }
-
   .default-container {
     height: 100vh;
     width: 100%;
