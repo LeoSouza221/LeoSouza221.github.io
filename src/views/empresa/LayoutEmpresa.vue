@@ -4,7 +4,7 @@
       height="150"
       dark
       fixed
-      style="background: linear-gradient(to right bottom, #000d26 70%, #bda346 30%)"
+      style="background:#000d26"
     )
       v-layout(justify-center row :align-center="verifyMobile()" fill-height)
         v-flex(xs3 md1)
@@ -16,8 +16,8 @@
           )
             v-icon(large) fa fa-balance-scale
         v-flex(xs9 md10)
-          h2.text-center(v-if="verifyMobile()") Um Nome Advocacia
-          h3.text-center(v-else :class="!verifyMobile() ? 'mt-5' : ''") Um Nome Advocacia
+          h2.text-center(v-if="verifyMobile()") Empresa
+          h3.text-center(v-else :class="!verifyMobile() ? 'mt-5' : ''") Empresa
       d-menu(:menuItems="itens" color="#000d26")
     main
       .parallax-image(
@@ -51,14 +51,14 @@
         v-row(align="center" justify="center" style="height: 100%")
           section.lawyer-extra-content
             .title-lawyer-extra-content
-              h2.white--text Atuações
+              h2 Atuações
             .content-lawyer-extra-content(v-scroll)
               .my-grid.my-grid-lawyer
                 template(v-for="i in 3")
                   .my-grid-item-lawyer(v-scrollanimation)
                     .avatar-grid
-                      v-avatar(dark size="60" style="border: solid 2px white; border-radius: 50%;")
-                        v-icon(large style="color: #fff;") fa fa-balance-scale
+                      v-avatar(dark size="60" style="border: 2px solid rgb(156, 153, 153); border-radius: 50%;")
+                        v-icon(large) fa fa-balance-scale
                     .text-grid
                       h4.text-grid-title Lorem
                       .text-grid-content 
@@ -70,14 +70,14 @@
         v-row(align="center" justify="center" style="height: 100%")
           section.lawyer-extra-content
             div.title-lawyer-extra-content
-              h2(style="color: #000d26") Corpo Juridico
+              h2(style="color: #000d26") Nossa Equipe
             v-row(justify="center" align="center" style="height: 100%")
               v-card.transparent(flat :width="verifyMobile() ? 700 : 350" height="600px")
                 v-window(v-model="onboarding" reverse)
                   v-window-item(
                     v-for="(item, index) in carouselItems"
                     :key="`card-${index}`"
-                    style="background: #000d26; border-radius: 5px"
+                    style="border-radius: 5px"
                   )
                     .avatar-grid
                       v-img(
@@ -165,7 +165,7 @@ export default {
         text: 'Atuações',
       },
       {
-        text: 'Corpo Jurídico',
+        text: 'Nossa Equipe',
       },
       {
         text: 'Contatos',
@@ -245,7 +245,7 @@ export default {
 
   .parallax-image {
     width: 100vw;
-    height: calc(100vh - 220px);
+    height: calc(100vh - 150px);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -285,7 +285,7 @@ export default {
   .atuacao-container {
     width: 100%; 
     height: 500px;
-    background: radial-gradient(circle at top right, #000d26 80%,#bda346 20%);
+    background: radial-gradient(circle at top right, #ffffff 80%, #cecece 20%);
   }
 
   .lawyer-extra-content {
@@ -320,14 +320,13 @@ export default {
     justify-content: center;
     border-radius: 5px;
     border: solid 1px #afafaf;
-    background: #000d26;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     padding: 2px;
     flex-direction: column;
     transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
   
-   .my-grid-item-lawyer:hover {
+  .my-grid-item-lawyer:hover {
     transform: scale(1.1)
   }
 
@@ -345,7 +344,6 @@ export default {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    color: #fff;
   }
 
   .text-grid-title {
@@ -367,7 +365,7 @@ export default {
   .contacts-container {
     width: 100%; 
     height: 600px;
-    background: radial-gradient(circle at top left, #000d26 80%, #bda346 20%);
+    background: radial-gradient(circle at top left, #cecece 80%, #ffffff 20%);
     color: white;
   }
 
