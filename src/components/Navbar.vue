@@ -1,12 +1,12 @@
 <template lang="pug">
   .sidebar
     .icon-bar
-      v-btn(   
+      v-btn.primary(   
         icon
         dark
         @click="openSide"
       )
-        v-icon fa fa-bars   
+        v-icon fa fa-bars
 </template>
 
 <script>

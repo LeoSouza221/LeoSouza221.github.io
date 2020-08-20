@@ -6,17 +6,6 @@
     v-slide-y-transition(mode="out-in" v-else)
       router-view
     main-footer
-    v-btn.primary(
-      dark
-      small
-      fixed
-      bottom
-      right
-      fab
-      v-if="$route.name !== 'Home'"
-      to="/"
-    )
-      v-icon fa fa-home
 </template>
 
 <script>
