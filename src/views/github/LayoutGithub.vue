@@ -7,8 +7,7 @@
           v-model="usuario"
         )
       v-row
-        v-card 
-          {{ usuarioInfos }}
+        v-card {{ usuarioInfos }}
 </template>
 
 <script>
