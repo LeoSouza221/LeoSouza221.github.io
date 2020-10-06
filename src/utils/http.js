@@ -1,8 +1,7 @@
 import axios from 'axios';
-import router from '@/router/index';
 
 const axiosInstance = axios.create({
-  baseURL: process.env.VUE_APP_ROOT_API,
+  baseURL: 'https://api.github.com',
   headers: { 'Content-Type': 'application/json' },
 });
 

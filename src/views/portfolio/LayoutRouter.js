@@ -32,17 +32,17 @@ export default [
       },
     },
   },
-  {
-    path: '/github',
-    name: 'GitHub',
-    component: () => import('../github/LayoutGithub.vue'),
-    meta: {
-      sidebar: {
-        icon: 'fab fa-github',
-        title: 'Github',
-      },
-    },
-  },
+  // {
+  //   path: '/github',
+  //   name: 'GitHub',
+  //   component: () => import('../github/LayoutGithub.vue'),
+  //   meta: {
+  //     sidebar: {
+  //       icon: 'fab fa-github',
+  //       title: 'Github',
+  //     },
+  //   },
+  // },
   {
     path: '/jogo-da-velha',
     name: 'Jogo Da Velha',
