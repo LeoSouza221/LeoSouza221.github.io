@@ -43,6 +43,7 @@
       "eslint:recommended"
     ],
     "rules": {
+      "no-console": "off",
       "allow": [
         "log",
         "warn",

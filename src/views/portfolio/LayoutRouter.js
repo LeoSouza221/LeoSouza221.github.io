@@ -65,6 +65,17 @@ export default [
       },
     },
   },
+  {
+    path: '/selecao',
+    name: 'Selecao',
+    component: () => import('../selecaoDeCampeao/Index.vue'),
+    meta: {
+      sidebar: {
+        icon: 'fas fa-gamepad',
+        title: 'Seleção Campeões',
+      },
+    },
+  },
   // {
   //   path: '/desenho',
   //   name: 'Desenho',
