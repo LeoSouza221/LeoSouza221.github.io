@@ -1,6 +1,6 @@
-# MY-SITE
+# Portfolio
 
-Portfolio to show my layouts.
+Portfolio to show, train and test my ideias.
 
 ## Project setup
 ```
