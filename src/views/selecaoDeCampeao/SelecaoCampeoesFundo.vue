@@ -1,16 +1,13 @@
 <template lang="pug">
   .selection-background
-    //- .image-container
-    //-   v-slide-y-transition(
-    //-     class="py-0"
-    //-     tag="v-list"
-    //-   )
-    //-     v-img(
-    //-       :src="personagem.url"
-    //-       contain
-    //-       height="100%"
-    //-       width="100%"
-    //-     )
+    .image-container
+      v-slide-y-transition(
+        class="py-0"
+        tag="v-list"
+      )
+        .image-selection(
+          :style="`background: radial-gradient(circle, rgba(2,0,36,1) 0%, url(${personagem.url}) 96%);`"
+        )
 </template>
 
 <script>
@@ -38,6 +35,13 @@ export default {
 
   .image-container {
     height: 80vh;
-    width: 60vw;
+    width: 100vw;
+  }
+
+  .image-selection {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(2, 2, 37, 0.4);
+    background-size: cover;
   }
 </style>

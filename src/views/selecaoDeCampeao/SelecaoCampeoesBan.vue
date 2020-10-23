@@ -1,9 +1,9 @@
 <template lang="pug">
   .ban-container
-    .ban-caracter
+    .ban-character
       .ban-image(v-for="index in 10")
         v-img(
-          src="http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/Aatrox.png"
+          src="http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/Brand.png"
           contain
           height="100%"
           width="100%"
@@ -17,20 +17,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
   }
 
-  .ban-caracter {
+  .ban-character {
     height: 70%;
-    width: 50%;
+    width: 1000px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
   .ban-image {
-    height: 100%;
-    width: 10%;
+    height: 60px;
+    width: 60px;
     border: 2px solid rgb(177, 160, 7);
     margin: 5px;
+    background-color: rgb(46, 46, 46);
   }
 </style>

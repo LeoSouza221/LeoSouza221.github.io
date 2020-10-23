@@ -9,7 +9,7 @@
       .grid-team1
         SCTeamOne
       .grid-chat
-        SCTeamTwo
+        SCChat
       .grid-skin
         SCSkin
       .grid-team2
@@ -23,6 +23,7 @@ import SelecaoCampeoesBan from './SelecaoCampeoesBan.vue';
 import SelecaoCampeoesTeamOne from './SelecaoCampeoesTeamOne.vue';
 import SelecaoCampeoesTeamTwo from './SelecaoCampeoesTeamTwo.vue';
 import SelecaoCampeoesSkin from './SelecaoCampeoesSkin.vue';
+import SelecaoCampeoesChat from './SelecaoCampeoesChat.vue';
 
 export default {
   name: 'SelecaoCampeoes',
@@ -33,6 +34,7 @@ export default {
     SCTeamOne: SelecaoCampeoesTeamOne,
     SCTeamTwo: SelecaoCampeoesTeamTwo,
     SCSkin: SelecaoCampeoesSkin,
+    SCChat: SelecaoCampeoesChat
   },
 
   data: () => ({
