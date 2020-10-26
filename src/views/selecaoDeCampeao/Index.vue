@@ -11,7 +11,9 @@
       .grid-chat
         SCChat
       .grid-skin
-        SCSkin
+        SCSkin(
+          :personagem="personagem"
+        )
       .grid-team2
         SCTeamTwo
 </template>
@@ -57,9 +59,10 @@ export default {
     // Champion Passive Assets
     // http://ddragon.leagueoflegends.com/cdn/10.21.1/img/passive/Anivia_P.png
     buscar() {
-      http.get('/img/champion/splash/Akali_0.jpg')
-        .then(({ config }) => {
-          this.personagem = config;
+      http.get('img/champion/splash/Shen_2.jpg')
+        .then((data) => {
+          console.log(data);
+          this.personagem = data.config;
         });
     },
   },
@@ -78,7 +81,7 @@ export default {
     color: white;
     display: grid;
     grid-template-columns:  0.25fr 0.5fr 0.25fr;
-    grid-template-rows:  0.10fr 0.7fr 0.2fr;
+    grid-template-rows:  0.10fr 0.65fr 0.25fr;
     grid-template-areas: 
       "ban ban ban"
       "team1 skin team2"

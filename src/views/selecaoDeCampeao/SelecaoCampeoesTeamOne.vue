@@ -22,7 +22,7 @@ export default {
     personagens: [
       {
         avatar: 'http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/Sett.png',
-        skin: 'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Sett_2.jpg',
+        skin: 'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Sett_0.jpg',
       },
       {
         avatar: 'http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/Nunu.png',

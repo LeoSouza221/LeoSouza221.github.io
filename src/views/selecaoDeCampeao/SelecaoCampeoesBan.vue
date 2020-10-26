@@ -29,8 +29,8 @@
   }
 
   .ban-image {
-    height: 60px;
-    width: 60px;
+    height: 45px;
+    width: 45px;
     border: 2px solid rgb(177, 160, 7);
     margin: 5px;
     background-color: rgb(46, 46, 46);

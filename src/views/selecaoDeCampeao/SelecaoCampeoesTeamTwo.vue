@@ -22,7 +22,7 @@ export default {
     personagens: [
       {
         avatar: 'http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/Camille.png',
-        skin: 'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Camille_5.jpg',
+        skin: 'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Camille_1.jpg',
       },
       {
         avatar: 'http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/MissFortune.png',
@@ -74,7 +74,7 @@ export default {
     top: 50%;
     transform: translateY(-50%);
     right: 20px;
-    border: 2px solid rgb(177, 160, 7);
+    border: 2px solid rgb(138, 18, 9);
     border-radius: 50%;
   }
   
