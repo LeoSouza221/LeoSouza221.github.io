@@ -73,7 +73,7 @@ export default {
     height: 70px;
     top: 50%;
     transform: translateY(-50%);
-    right: 20px;
+    right: 35px;
     border: 2px solid rgb(138, 18, 9);
     border-radius: 50%;
   }

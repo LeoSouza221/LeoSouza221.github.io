@@ -1,7 +1,7 @@
 <template lang="pug">
   .selection-background
     .image-background(
-      :style="`background: url(${personagem.baseURL}${personagem.url});`"
+      :style="`background: url(${personagem.url});`"
     )
 </template>
 

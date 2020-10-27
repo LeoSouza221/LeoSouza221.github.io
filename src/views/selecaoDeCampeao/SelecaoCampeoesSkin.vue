@@ -5,7 +5,7 @@
       tag="v-list"
     )
       .image-selection(
-        :style="`background: url(${personagem.baseURL}${personagem.url});`"
+        :style="`background: url(${personagem.url});`"
       )
 </template>
 
@@ -23,8 +23,8 @@ export default {
 
 <style scoped>
   .image-container {
-    height: 65%;
-    width: 50%;
+    height: 72%;
+    width: 100%;
     z-index: 2;
   }
 

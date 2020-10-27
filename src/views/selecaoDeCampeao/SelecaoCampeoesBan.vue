@@ -1,7 +1,14 @@
 <template lang="pug">
   .ban-container
     .ban-character
-      .ban-image(v-for="index in 10")
+      .ban-image(v-for="index in 5")
+        v-img(
+          src="http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/Brand.png"
+          contain
+          height="100%"
+          width="100%"
+        )
+      .ban-image(v-for="index in 5")
         v-img(
           src="http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/Brand.png"
           contain
