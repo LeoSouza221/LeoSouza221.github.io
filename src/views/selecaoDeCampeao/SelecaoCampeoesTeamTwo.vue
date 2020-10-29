@@ -4,17 +4,13 @@
       .character-info(v-if="index !== 4")
         .character-text
           h5 {{ url.name }}
-          p Invocador {{ index + 1 }}
+          p(style="margin: 0;") Invocador {{ index + 1 }}
         .character-avatar
-          v-avatar(size="100%")
-            v-img(
-              :src="url.avatar"
-              contain
-              height="100%"
-              width="100%"
-            )
-        .separator-line
-      .character-info
+          .character-avatar-box
+            v-avatar(size="100%")
+              img(
+                :src="url.avatar"
+              )
         .separator-line
 </template>
 
@@ -65,22 +61,26 @@ export default {
     position: relative;
     width: 100%;
     height: 20%;
+    display: flex;
+    align-items: center;
   }
 
   .character-info {
-    height: 100%;
+    height: 70px;
     width: 100%;
     display: flex;
     align-items: center;
   }
 
   .character-avatar {
-    position: absolute;
+    width: 110px;
+    height: 100%;
+    display: flex;
+  }
+
+  .character-avatar-box {
     width: 70px;
     height: 70px;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 35px;
     border: 2px solid rgb(138, 18, 9);
     border-radius: 50%;
   }
@@ -106,8 +106,12 @@ export default {
   }
   
   .character-text {
-    height: 50px;
-    width: 70%;
+    height: 70px;
+    width: calc(100% - 110px);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     text-align: right;
+    padding-right: 15px;
   }
 </style>
