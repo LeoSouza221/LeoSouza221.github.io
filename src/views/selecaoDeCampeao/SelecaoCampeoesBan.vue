@@ -1,20 +1,22 @@
 <template lang="pug">
   .ban-container
     .ban-character
-      .ban-image(v-for="index in 5")
-        v-img(
-          src="http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/Brand.png"
-          contain
-          height="100%"
-          width="100%"
-        )
-      .ban-image(v-for="index in 5")
-        v-img(
-          src="http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/Brand.png"
-          contain
-          height="100%"
-          width="100%"
-        )
+      .ban-col
+        .ban-images(v-for="index in 5")
+          v-img(
+            src="http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/Brand.png"
+            contain
+            height="100%"
+            width="100%"
+          )
+      .ban-col.col-left
+        .ban-images(v-for="index in 5")
+          v-img(
+            src="http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/Brand.png"
+            contain
+            height="100%"
+            width="100%"
+          )
 </template>
 
 <style scoped>
@@ -29,16 +31,28 @@
 
   .ban-character {
     height: 70%;
-    width: 1000px;
+    width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .ban-image {
-    height: 45px;
-    width: 45px;
-    border: 2px solid rgb(177, 160, 7);
+  .ban-col {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+  }
+
+  .col-left {
+    justify-content: flex-end;
+    padding-right: 35px;
+  }
+
+  .ban-images {
+    height: 35px;
+    width: 35px;
     margin: 5px;
     background-color: rgb(46, 46, 46);
   }
