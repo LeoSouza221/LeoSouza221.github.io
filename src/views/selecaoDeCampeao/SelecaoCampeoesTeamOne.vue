@@ -1,20 +1,22 @@
 <template lang="pug">
   .team-container
-    .team-character-box(v-for="(url, index) in personagens" :key="index")
-      .character-background(
-        :style="`background-image: linear-gradient(to left, transparent, rgb(2, 2, 37)), url(${url.skin});`"
-      )
-      .character-info(v-if="index !== 4")
-        .character-avatar
-          .character-avatar-box
-            v-avatar(size="100%")
-              img(
-                :src="url.avatar"
-              )
-        .character-text
-          h5 {{ url.name }}
-          p(style="margin: 0;") Invocador {{ index + 1 }}
-        .separator-line
+    .team-box-1
+      .team-character-box(v-for="(url, index) in personagens" :key="index")
+        .character-background(
+          :style="`background-image: linear-gradient(to left, transparent, rgb(2, 2, 37)), url(${url.skin});`"
+        )
+        .character-info(v-if="index !== 4")
+          .character-avatar
+            .character-avatar-box
+              v-avatar(size="100%")
+                img(
+                  :src="url.avatar"
+                )
+          .character-text
+            h5 {{ url.name }}
+            p(style="margin: 0;") Invocador {{ index + 1 }}
+          .separator-line
+    .team-box-2    
 </template>
 
 <script>
@@ -50,9 +52,22 @@ export default {
 
 <style scoped>
   .team-container {
+    position: relative;
     height: 100%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  .team-box-1 {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+
+  .team-box-2 {
+    height: 100%;
+    clip-path: circle(183% at 290% 50%);
+    background-color:rgb(2, 2, 37);
   }
 
   .team-character-box {
