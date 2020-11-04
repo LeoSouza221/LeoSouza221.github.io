@@ -12,7 +12,8 @@
         .circulo-1
     .skins-selection
     .details-selection
-
+      .linha
+      .select
 </template>
 
 <script>
