@@ -28,35 +28,35 @@ export default {
   data: () => ({
     personagens: [
       {
-        avatar: 'http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/Sett.png',
+        avatar: 'http://ddragon.leagueoflegends.com/cdn/10.22.1/img/champion/Sett.png',
         skin: 'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Sett_0.jpg',
         name: 'Sett',
         position: 'Topo',
         summoner: 'ArthurLanches',
       },
       {
-        avatar: 'http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/Nunu.png',
+        avatar: 'http://ddragon.leagueoflegends.com/cdn/10.22.1/img/champion/Nunu.png',
         skin: 'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Nunu_2.jpg',
         name: 'Nunu',
         position: 'Caçador',
         summoner: 'ArthurLanches',
       },
       {
-        avatar: 'http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/Orianna.png',
+        avatar: 'http://ddragon.leagueoflegends.com/cdn/10.22.1/img/champion/Orianna.png',
         skin: 'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Orianna_2.jpg',
         name: 'Orianna',
         position: 'Meio',
         summoner: 'ArthurLanches',
       },
       {
-        avatar: 'http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/Braum.png',
+        avatar: 'http://ddragon.leagueoflegends.com/cdn/10.22.1/img/champion/Braum.png',
         skin: 'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Braum_2.jpg',
         name: 'Braum',
         position: 'Suporte',
         summoner: 'ArthurLanches',
       },
       {
-        avatar: 'http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/Twitch.png',
+        avatar: 'http://ddragon.leagueoflegends.com/cdn/10.22.1/img/champion/Twitch.png',
         skin: 'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Twitch_2.jpg',
         name: 'Twitch',
         position: 'Atirador',

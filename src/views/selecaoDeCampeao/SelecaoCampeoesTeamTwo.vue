@@ -21,27 +21,27 @@ export default {
   data: () => ({
     personagens: [
       {
-        avatar: 'http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/Camille.png',
+        avatar: 'http://ddragon.leagueoflegends.com/cdn/10.22.1/img/champion/Camille.png',
         skin: 'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Camille_1.jpg',
         name: 'Camille',
       },
       {
-        avatar: 'http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/MissFortune.png',
+        avatar: 'http://ddragon.leagueoflegends.com/cdn/10.22.1/img/champion/MissFortune.png',
         skin: 'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/MissFortune_4.jpg',
         name: 'MissFortune',
       },
       {
-        avatar: 'http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/Hecarim.png',
+        avatar: 'http://ddragon.leagueoflegends.com/cdn/10.22.1/img/champion/Hecarim.png',
         skin: 'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Hecarim_3.jpg',
         name: 'Hecarim',
       },
       {
-        avatar: 'http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/Nami.png',
+        avatar: 'http://ddragon.leagueoflegends.com/cdn/10.22.1/img/champion/Nami.png',
         skin: 'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Nami_7.jpg',
         name: 'Nami',
       },
       {
-        avatar: 'http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/Malphite.png',
+        avatar: 'http://ddragon.leagueoflegends.com/cdn/10.22.1/img/champion/Malphite.png',
         skin: 'http://ddragon.leagueoflegends.com/cdn/img/champion/loading/Malphite_6.jpg',
         name: 'Malphite',
       },

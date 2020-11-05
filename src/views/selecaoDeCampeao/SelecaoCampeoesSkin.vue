@@ -12,8 +12,39 @@
             )
     .skins-selection
     .details-selection
-      .linha
-      .select
+      v-row(
+        justify="center"
+        align="center"
+        style="height: 100%"
+      )
+        .line
+        .edit.px-2
+        .select
+          v-select(
+            outlined
+            dense
+            color="white"
+            width="20px"
+          )
+        .skill
+          .skill-square
+            v-img(
+              src="http://ddragon.leagueoflegends.com/cdn/10.22.1/img/spell/SummonerFlash.png"
+              contain
+              height="100%"
+              width="100%"
+            )
+        .skill
+          .skill-square
+            v-img(
+              src="http://ddragon.leagueoflegends.com/cdn/10.22.1/img/spell/SummonerHeal.png"
+              contain
+              height="100%"
+              width="100%"
+            )
+        .ward
+        .emote
+        .line
 </template>
 
 <script>
@@ -76,7 +107,24 @@ export default {
   }
 
   .details-selection {
-    height: 8%;
+    height: calc(8% - 20px);
     width: 100%;
+  }
+
+  .line {
+    width: 20px;
+    height: 1px;
+    background-color: #988343;
+  }
+
+  .skill {
+    height: 100%;
+    width: 40px;
+  }
+
+  .skill-square {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #988343;
   }
 </style>

@@ -4,7 +4,7 @@
       .ban-col
         .ban-images(v-for="index in 5")
           v-img(
-            src="http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/Brand.png"
+            src="http://ddragon.leagueoflegends.com/cdn/10.22.1/img/champion/Brand.png"
             contain
             height="100%"
             width="100%"
@@ -12,7 +12,7 @@
       .ban-col.col-left
         .ban-images(v-for="index in 5")
           v-img(
-            src="http://ddragon.leagueoflegends.com/cdn/10.21.1/img/champion/Brand.png"
+            src="http://ddragon.leagueoflegends.com/cdn/10.22.1/img/champion/Brand.png"
             contain
             height="100%"
             width="100%"
