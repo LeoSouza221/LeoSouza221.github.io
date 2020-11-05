@@ -26,7 +26,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.4);
   }
 
   .ban-character {

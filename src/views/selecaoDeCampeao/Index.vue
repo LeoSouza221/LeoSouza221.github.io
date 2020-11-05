@@ -80,7 +80,7 @@ export default {
     height: 100%;
     color: white;
     display: grid;
-    grid-template-columns:  0.25fr 0.5fr 0.25fr;
+    grid-template-columns:  0.30fr 0.4fr 0.30fr;
     grid-template-rows:  0.10fr 0.65fr 0.25fr;
     grid-template-areas: 
       "ban ban ban"

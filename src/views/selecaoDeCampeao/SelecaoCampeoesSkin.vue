@@ -1,15 +1,15 @@
 <template lang="pug">
   .skin-container
     .image-container
-      v-slide-y-transition(
-        class="py-0"
-        tag="v-list"
-      )
-        .image-selection(
-          :style="`background: url(${personagem.url});`"
-        )
       .circulos
         .circulo-1
+          v-slide-y-transition(
+            class="py-0"
+            tag="v-list"
+          )
+            .image-selection(
+              :style="`background: url(${personagem.url});`"
+            )
     .skins-selection
     .details-selection
       .linha
@@ -47,6 +47,7 @@ export default {
     filter: none !important;
     background-size: cover !important;
     background-position: center !important;
+    border-radius: 50%;
   }
 
   .circulos {

@@ -17,7 +17,8 @@
             h5 {{ url.position }}
             p(style="margin: 0; font-size: 10px;") {{ url.summoner }}
           .separator-line
-    .team-box-2    
+    .team-box-2
+      .ring-1
 </template>
 
 <script>
@@ -71,23 +72,23 @@ export default {
     position: relative;
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
   }
 
   .team-box-1 {
     height: 100%;
-    width: 100%;
-    position: absolute;
+    width: 80%;
+    overflow: hidden;
+    position: relative;
   }
 
-  .team-box-2 {
+  /* .team-box-2 {
     height: 100%;
     width: 100%;
     position: absolute;
     right: -10px;
     clip-path: circle(103% at 200% 50%);
     background-color:rgb(2, 2, 37);
-  }
+  } */
 
   .team-character-box {
     position: relative;
@@ -108,7 +109,7 @@ export default {
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: rgba(2, 2, 37, 0.4);
+    background-color: transparent;
     background-size: cover;
     background-position-y: 10%;
     background-position-x: 50%;
